@@ -6,3 +6,4 @@
 /out
 /geb-reports/
 *.log
+/target/
