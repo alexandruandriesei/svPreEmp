@@ -1,14 +1,17 @@
-package person;
+package oana.m.person;
 
 public class Person {
 
+    public Person(){
 
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String gender;
-    private String emailAddress;
-    boolean isEmailRestricted;
+    }
+        protected String firstName;
+        protected String lastName;
+        private int age;
+        private String gender;
+        private String emailAddress;
+        boolean isEmailRestricted;
+
 
     public Person(String firstName, String lastName, int age, String gender, String emailAddress) {
         this.firstName = firstName;
