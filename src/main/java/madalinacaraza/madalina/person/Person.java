@@ -1,8 +1,8 @@
 package madalinacaraza.madalina.person;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    protected String firstName;
+    protected String lastName;
     private int age;
     private String gender;
     private String emailAddress;
@@ -81,5 +81,6 @@ public class Person {
         System.out.println("Detaliile persoanei sunt: " + this.firstName + " " + this.lastName + " " + this.age + " " + this.gender + " " + getEmailAddress());
     }
 
-
+    public Person() {
+    }
 }

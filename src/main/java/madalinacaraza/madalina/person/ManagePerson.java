@@ -1,5 +1,7 @@
 package madalinacaraza.madalina.person;
 
+import student.Student;
+
 public class ManagePerson {
     public static void main(String[] args) {
         Person madaPerson = new Person("Madalina" , "Caraza" , 34 , "Feminin", "madalinacaraza@yahoo.com");
@@ -16,6 +18,13 @@ public class ManagePerson {
         madaPerson.informationPerson();
         madaPerson.setEmailAddress("test@test.com");
 
+        Student s1 = new Student("Madalina", "Caraza", true, 12);
+
+        s1.addDisciplineMark("Mate", 10);
+        s1.addDisciplineMark("Geografie", 9);
+        System.out.println(s1.getFirstName() + s1.getLastName() + s1.getDisciplineMarks());
+
+        System.out.println(s1.calculateAverageDisciplinesScore());
 
     }
 }
