@@ -1,4 +1,4 @@
 /**
  * Package contains string algorithms;
  */
-package String.algorithms;
+package string.algorithms;

@@ -1,5 +1,5 @@
 import hello.world.HelloWorld;
-import String.algorithms.StringAlgorithms;
+import string.algorithms.StringAlgorithms;
 
 /**
  * Class used for running different pre-employment program scenarios.
