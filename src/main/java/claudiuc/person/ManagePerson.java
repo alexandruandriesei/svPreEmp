@@ -1,10 +1,12 @@
 package claudiuc.person;
 
+import claudiuc.person.student.Student;
+
 public class ManagePerson {
 
     public static void main(String[] args) throws IllegalAccessException {
         Person claudiu = new Person("Claudiu", "Iacob", false);
-
+        Student claudiui= new Student();
 
         claudiu.Afisare();
 
@@ -22,7 +24,22 @@ public class ManagePerson {
         claudiu.setEmailRestricted(true);
 
         claudiu.Afisare();
-//        claudiu.setEmailRestricted(false);
+        claudiui.adaugareNota("Mate",10);
+        claudiui.adaugareNota("Info",8);
+        claudiui.adaugareNota("Engleza",5);
+        claudiui.adaugareNota("Sport",7);
+        claudiui.adaugareNota("Economie",6);
+        claudiui.adaugareNota("France",8);
+        System.out.println(claudiui.medie());
+
+
+
+
+//      claudiu.setEmailRestricted(false);
+
+
+
+
 
 
 

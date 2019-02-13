@@ -9,6 +9,9 @@ public class Person {
     private String emailAdress;
     private Boolean emailRestricted;
 
+    public Person() {
+    }
+
     public Boolean isEmailRestricted() {
         return this.emailRestricted;
     }
@@ -20,7 +23,7 @@ public class Person {
     public Person(String firstName, String lastName, Boolean emailRestricted) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emailRestricted = emailRestricted;
+    //    this.emailRestricted = emailRestricted;
     }
 
     public String getFirstName() {
@@ -49,7 +52,8 @@ public class Person {
 
     public void Afisare() throws IllegalAccessException {
         System.out.println(this.age + " " + " " + this.lastName + " " + this.firstName + " " + this.gender + " " + this.emailRestricted);
-        System.out.println(getEmailAdress());
+
+
     }
 
     public String getGender() {
@@ -62,16 +66,7 @@ public class Person {
 
     }
 
-    public String getEmailAdress() throws IllegalAccessException {
-        if (!emailRestricted) {
-            return this.emailAdress;
-        } else {
-            throw new IllegalAccessException("Email este restrictionat");
 
-        }
-
-
-    }
 
     public void setEmailAdress(String emailAdress) {
         this.emailAdress = emailAdress;
