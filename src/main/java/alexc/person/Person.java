@@ -8,6 +8,11 @@ public class Person {
     private String emailAddress;
     private Boolean isEmailRestricted;
 
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public void setAge(int age) {
         this.age = age;
     }
