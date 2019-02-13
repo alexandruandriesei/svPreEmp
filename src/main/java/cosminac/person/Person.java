@@ -2,8 +2,8 @@ package cosminac.person;
 
 public class Person {
 
-    private String firstName;
-    private String lastName;
+    protected String firstName;
+    protected String lastName;
     private int age;
     private String gender;
     private String emailAddress;
@@ -14,7 +14,7 @@ public class Person {
         this.lastName = lastName;
         this.gender = gender;
         this.emailAddress = emailAddress;
-        this.isEmailRestricted = true;
+        this.isEmailRestricted = isEmailRestricted;
     }
 
     public String getFirstName() {
@@ -88,6 +88,6 @@ public class Person {
 
     }
 
-
-
+    public Person() {
+    }
 }
