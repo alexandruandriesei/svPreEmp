@@ -1,6 +1,6 @@
 package cosminac.person;
 
-import students.Student;
+import cosminac.students.Student;
 
 public class ManagePerson {
 
