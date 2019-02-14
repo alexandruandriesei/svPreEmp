@@ -1,10 +1,14 @@
 package roxanaa.person.manage;
+
 import roxanaa.person.Person;
+
 import java.lang.String;
+
+import roxanaa.person.student.Student;
 
 
 public class ManagePerson {
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         Person roxana = new Person("Roxana", "Ambrozie");
 
         roxana.setAge(20);
@@ -19,6 +23,18 @@ public class ManagePerson {
         System.out.println("After:");
 
         roxana.getAllAboutPerson();
+
+        Student roxanaStudent = new Student("Roxana", "Ambrozie", true, 10);
+        roxanaStudent.getDisciplineMarks().put("MRCM", 9);
+        roxanaStudent.getDisciplineMarks().put("CS", 10);
+        roxanaStudent.getDisciplineMarks().put("BD", 10);
+        roxanaStudent.getDisciplineMarks().put("MCT", 8);
+
+        roxanaStudent.calculateAverageDisciplineMarks();
+        System.out.println(roxanaStudent.calculateAverageDisciplineMarks());
+
+
+
     }
 
 }

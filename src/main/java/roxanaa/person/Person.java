@@ -6,12 +6,16 @@ import java.sql.SQLOutput;
 
 public class Person {
 
-    private String firstName;
-    private String lastName;
+    protected String firstName;
+    protected String lastName;
     private int age;
     private String gender;
     private String emailAddress;
     private boolean isEmailRestricted;
+
+
+    public Person() {
+    }
 
     public Person(boolean isEmailRestricted) {
         this.isEmailRestricted = isEmailRestricted;
