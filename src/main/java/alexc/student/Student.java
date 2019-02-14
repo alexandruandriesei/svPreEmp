@@ -1,7 +1,6 @@
 package alexc.student;
 
 import alexc.person.Person;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -66,5 +65,8 @@ public class Student extends Person {
         System.out.println("Disciplines-grades: " + alex.getDisciplineMarks());
 
         alex.calculateAverageDisciplinesScore();
+
+
+
     }
 }
