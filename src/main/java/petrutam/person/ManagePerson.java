@@ -17,8 +17,6 @@ public class ManagePerson {
         petr.addDisciplineMark("python", 8);
         petr.addDisciplineMark("java", 10);
         petr.addDisciplineMark("ml", 9);
-
-
         System.out.println(petr.calculateAverageDisciplinesScore());
     }
 }
