@@ -14,10 +14,7 @@ public class ManagePerson {
         claudiu.setGender("Male");
 
         claudiu.Afisare();
-//        System.out.println(claudiu.getAge());
-//        System.out.println(claudiu.getGender());
-//
-//
+
         claudiu.setEmailAdress("iacob.claudiu1@gmail.com");
         claudiu.Afisare();
 
@@ -35,7 +32,7 @@ public class ManagePerson {
 
 
 
-//      claudiu.setEmailRestricted(false);
+
 
 
 

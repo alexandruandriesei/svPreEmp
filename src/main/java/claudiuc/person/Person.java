@@ -23,7 +23,7 @@ public class Person {
     public Person(String firstName, String lastName, Boolean emailRestricted) {
         this.firstName = firstName;
         this.lastName = lastName;
-    //    this.emailRestricted = emailRestricted;
+
     }
 
     public String getFirstName() {
