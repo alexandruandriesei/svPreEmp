@@ -1,7 +1,7 @@
 package cosminac.person;
 
 import cosminac.person.trainer.Trainer;
-import students.Student;
+import cosminac.students.Student;
 
 public class ManagePerson {
 
