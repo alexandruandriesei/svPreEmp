@@ -34,7 +34,6 @@ public class ManagePerson {
         System.out.println(trainer1.getSpecialization());
         System.out.println(trainer2.getYearsOfExperience());
 
-        s1.addFeedbackWithName();
-        System.out.println(trainer1.printDetails(););
+
     }
 }
