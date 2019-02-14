@@ -34,6 +34,5 @@ public class ManagePerson {
 
         out.println(trainer1.getSpecialization());
         out.println(trainer2.getYearsOfExperience());
-
     }
 }
