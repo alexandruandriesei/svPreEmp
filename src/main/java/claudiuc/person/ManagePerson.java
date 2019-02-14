@@ -1,12 +1,14 @@
 package claudiuc.person;
 
 import claudiuc.person.student.Student;
+import claudiuc.person.trainer.Trainer;
 
 public class ManagePerson {
 
     public static void main(String[] args) throws IllegalAccessException {
         Person claudiu = new Person("Claudiu", "Iacob", false);
         Student claudiui= new Student();
+
 
         claudiu.Afisare();
 
