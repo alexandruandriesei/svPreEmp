@@ -1,7 +1,6 @@
 package roxanaa.person;
 
 import com.sun.istack.internal.localization.NullLocalizable;
-
 import java.sql.SQLOutput;
 
 public class Person {
@@ -12,7 +11,6 @@ public class Person {
     private String gender;
     private String emailAddress;
     private boolean isEmailRestricted;
-
 
     public Person() {
     }
@@ -33,7 +31,6 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
     public String getFirstName() {
         return firstName;
     }
@@ -79,8 +76,6 @@ public class Person {
         }
     }
 
-
-
     public void setEmailAddress(String emailAddress) {
         String emailRegex = "(?:[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\.[a-" +
                 "z0-9!#$%&'*+\\/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f" +
@@ -107,4 +102,3 @@ public class Person {
                         " and the email is restricted: " + this.isEmailRestricted);
     }
 }
-

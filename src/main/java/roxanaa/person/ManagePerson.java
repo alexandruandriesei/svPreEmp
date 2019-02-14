@@ -1,11 +1,8 @@
-package roxanaa.person.manage;
-
-import roxanaa.person.Person;
+package roxanaa.person;
 
 import java.lang.String;
-
-import roxanaa.person.student.Student;
-
+import roxanaa.student.Student;
+import roxanaa.trainer.Trainer;
 
 public class ManagePerson {
     public static void main(String[] args) {
@@ -32,9 +29,5 @@ public class ManagePerson {
 
         roxanaStudent.calculateAverageDisciplineMarks();
         System.out.println(roxanaStudent.calculateAverageDisciplineMarks());
-
-
-
     }
-
 }
