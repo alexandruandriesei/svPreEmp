@@ -1,4 +1,4 @@
-package students;
+package cosminac.students;
 
 import cosminac.person.Person;
 

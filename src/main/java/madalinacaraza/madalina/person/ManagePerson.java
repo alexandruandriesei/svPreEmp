@@ -1,6 +1,8 @@
 package madalinacaraza.madalina.person;
 
-import madalinacaraza.madalina.student.Student;
+
+import madalinacaraza.student.Student;
+
 
 public class ManagePerson {
     public static void main(String[] args) {
