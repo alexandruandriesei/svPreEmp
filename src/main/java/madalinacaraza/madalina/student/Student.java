@@ -25,14 +25,15 @@ public class Student extends Person {
 
     public float calculateAverageDisciplinesScore() {
         int score = 0;
+        int count = 0;
         Set set = disciplineMarks.entrySet();
         Iterator iterator = set.iterator();
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
             score = score + (int) mentry.getValue();
-
+            count += 1;
         }
-        float scoreAvarege = (float) score / disciplineMarks.size();
+        float scoreAvarege = (float) score / count;
         return scoreAvarege;
     }
 
