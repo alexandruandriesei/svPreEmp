@@ -59,8 +59,8 @@ public class Student extends Person {
     }
 
 
-    public Integer calculateAverageDisciplinesScore() {
-        int average = 0;
+    public float calculateAverageDisciplinesScore() {
+        float average = 0;
         for (Map.Entry element : disciplineMarks.entrySet()) {
             average += (int) element.getValue();
         }
