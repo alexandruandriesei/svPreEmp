@@ -19,4 +19,5 @@ public class ManagePerson {
 
         System.out.println(((Student) s1).getDisciplineMarks());
     }
+
 }
