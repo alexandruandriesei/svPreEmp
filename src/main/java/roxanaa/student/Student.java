@@ -1,7 +1,6 @@
-package roxanaa.person.student;
+package roxanaa.student;
 
 import roxanaa.person.Person;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,16 +43,11 @@ public class Student extends Person {
         this.graduated = graduated;
         this.interviewScore = interviewScore;
         this.disciplineMarks = disciplineMarks;
-
-
     }
 
     public void addDisciplineMark(String numeDisciplina, Integer nota) {
         this.disciplineMarks.put(numeDisciplina, nota);
-
-    }
-
-    ;
+    };
 
     public int calculateAverageDisciplineMarks() {
         int suma = 0;

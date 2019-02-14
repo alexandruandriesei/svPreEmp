@@ -1,6 +1,7 @@
 package oana.m.person;
 
 import oana.m.student.Student;
+import oana.m.trainer.Trainer;
 
 public class ManagePerson {
 
@@ -20,5 +21,22 @@ public class ManagePerson {
         s.addDisciplineMark("bio",8);
         s.afiseaza();
         System.out.println("Media este: "+s.calculateAverageDisciplineScore());
+
+        Trainer alex=new Trainer("Alex","A","Automation",8);
+        alex.seeTrainer();
+        alex.getSpecialization();
+        alex.getYearsOfExperience();
+        alex.setSpecialization("Everything");
+        alex.setYearsOfExperience(5);
+        alex.adaugareFeedback("h",-25);
+        System.out.println(alex.getFeedbackMarks());
+        alex.seeTrainer();
+
+            Trainer t1=new Trainer("Gabi","H","Aut",5);
+            Trainer t2=new Trainer("Andreea","R","Manual",7);
+            t1.seeAllDetails();
+            t2.seeAllDetails();
+
+
     }
 }
