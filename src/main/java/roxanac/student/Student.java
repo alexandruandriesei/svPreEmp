@@ -59,11 +59,7 @@ public class Student extends Person {
 
 
 
-    public void addFeedback(Map<String, Integer> feedbackList, Integer feedback){
-        if(feedback <= 10 && feedback >= 0)
-            feedbackList.put("Anonim", feedback);
 
-    }
 
 }
 
