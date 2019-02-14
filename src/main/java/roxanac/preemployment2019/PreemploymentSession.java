@@ -4,7 +4,9 @@ import roxanac.student.Student;
 import roxanac.trainer.Trainer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class PreemploymentSession {
     private Integer Year;
@@ -75,4 +77,96 @@ public class PreemploymentSession {
         this.trainers.add(trainer);
     }
 
+    public float HighestAverageScore(){
+        float maxim = 0;
+        float average = 0;
+        for ( int i = 0; i< students.size(); i++) {
+            average = students.get(i).calculateAverageDisciplineScore();
+            if(average > maxim)
+                maxim = average;
+        }
+           return maxim;
+    }
+
+    public float bestTrainer(){
+        float maxim = 0;
+        float average = 0;
+        for ( int i = 0; i< trainers.size(); i++) {
+            average = trainers.get(i).calculateHighiestAverageFeedbackTrainer();
+            if(average > maxim)
+                maxim = average;
+        }
+        return maxim;
+
+    }
+
+    public void printDetailsProgram(){
+        System.out.println("Program year:" + this.getYear());
+        System.out.println("Community:" + this.getCommunity());
+        System.out.println("Type:" + this.getType());
+        if(students.size() == 0)
+            System.out.println("The Student List is empty!");
+        else {
+            System.out.println("List of students: ");
+            for (int i = 0; i < students.size(); i++) {
+                System.out.println(students.get(i).getFirstName() + " ");
+                System.out.println(students.get(i).getLastName() + " ");
+                System.out.println(students.get(i).getAge() + " ");
+                System.out.println(students.get(i).getEmail() + " ");
+                System.out.println(students.get(i).getGender() + " ");
+            }
+
+        }
+        if(trainers.isEmpty())
+            System.out.println("The Trainer List is empty!");
+        else
+        {
+            System.out.println("List of trainers: ");
+            for (int i = 0; i < trainers.size(); i++) {
+                System.out.println(trainers.get(i).getFirstName() + " ");
+                System.out.println(trainers.get(i).getLastName() + " ");
+                System.out.println(trainers.get(i).getAge() + " ");
+                System.out.println(trainers.get(i).getEmail() + " ");
+                System.out.println(trainers.get(i).getSpecialization() + " ");
+                System.out.println(trainers.get(i).getYearsOfExperience() + " ");
+                System.out.println(trainers.get(i).getFeedbackList());
+            }
+        }
+
+    }
+    public String returnStudentList(){
+        StringBuilder stringStudent = new StringBuilder();
+        for (int i = 0; i < students.size(); i++) {
+            stringStudent.append(students.get(i).getFirstName() + " ");
+            stringStudent.append(students.get(i).getLastName() + " ");
+            stringStudent.append(students.get(i).getAge() + " ");
+            stringStudent.append(students.get(i).getEmail() + " ");
+            stringStudent.append(students.get(i).getGender() + " ");
+        }
+        return stringStudent.toString();
+    }
+
+    public String returnTrainerList(){
+
+        StringBuilder string = new StringBuilder();
+        for (int i = 0; i < trainers.size(); i++) {
+            string.append(trainers.get(i).getFirstName() + " ");
+            string.append(trainers.get(i).getLastName() + " ");
+            string.append(trainers.get(i).getAge() + " ");
+            string.append(trainers.get(i).getEmail() + " ");
+            string.append(trainers.get(i).getSpecialization() + " ");
+            string.append(trainers.get(i).getYearsOfExperience() + " ");
+            string.append(trainers.get(i).getFeedbackList());
+        }
+        return string.toString();
+    }
+    @Override
+    public String toString(){
+        String trainerList =  (trainers.isEmpty()) ?"\n The trainer list is empty!": returnTrainerList() + "\n";
+        String studentList = (students.isEmpty()) ?"\n The student list is empty!": returnStudentList() +"\n";
+        return "\n Program year: " + this.getYear() + "\n " + "\n Community: " + this.getCommunity() + "\n Type: " + this.getType() + "\n" + trainerList + "\n" + studentList + "\n";
+
+
+
+    }
 }

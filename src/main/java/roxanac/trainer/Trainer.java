@@ -3,9 +3,7 @@ package roxanac.trainer;
 import roxanac.person.Person;
 
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.*;
 
 public class Trainer extends Person {
     public String specialization;
@@ -60,6 +58,23 @@ public class Trainer extends Person {
         if(feedback <= 10 && feedback >= 0)
             feedbackList.put(name, feedback);
 
+    }
+
+    public float calculateHighiestAverageFeedbackTrainer(){
+        int average = 0;
+        int count = 0;
+        float result;
+        Set entrySet = feedbackList.entrySet();
+        Iterator it = entrySet.iterator();
+
+        while(it.hasNext())
+        {
+            Map.Entry feedbackValue = (Map.Entry)it.next();
+            count ++;
+            average = average +  (int)feedbackValue.getValue();
+        }
+        result = (float)average/count;
+        return  result;
     }
 
 }
