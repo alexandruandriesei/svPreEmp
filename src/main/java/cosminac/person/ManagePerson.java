@@ -23,6 +23,9 @@ public class ManagePerson {
         cosmina.addDisciplineMark("Geography", 5);
         System.out.println(cosmina.getDisciplineMarks());
         System.out.println(cosmina.calculateAverageDisciplinesScore());
+
+
+
     }
 
 }
