@@ -56,9 +56,10 @@ public class Trainer extends Person {
 
     }
 
-    public void addFeedbackWithName(Map<String, Integer> feedbackList, String firstName, Integer feedback){
+    public void addFeedback(String name, Integer feedback){
         if(feedback <= 10 && feedback >= 0)
-            feedbackList.put(firstName, feedback);
+            feedbackList.put(name, feedback);
+
     }
 
 }
