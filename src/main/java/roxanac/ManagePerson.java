@@ -32,6 +32,7 @@ public class ManagePerson {
         Trainer trainer1 = new Trainer("Andr", "Popescu", 35, "Masculin", "popescu.andrei@gmail.com", "automation testing", 6);
         Trainer trainer2 = new Trainer("Ion", "Ionescu", 45, "Feminin", "ionescuion@gmail.com", "manual tasting", 2);
 
+
         out.println(trainer1.getSpecialization());
         out.println(trainer2.getYearsOfExperience());
     }

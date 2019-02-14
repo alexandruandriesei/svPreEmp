@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class Student extends Person {
     private static String code;
-    private Boolean graduated;
-    private int interviewScore;
+    public Boolean graduated;
+    public int interviewScore;
     private HashMap<String, Integer> disciplineMarks = new HashMap<>();
 
     public Student(String firstName, String lastName, boolean graduated, Integer interviewScore) {
@@ -64,6 +64,24 @@ public class Student extends Person {
         for (Map.Entry element : disciplineMarks.entrySet()) {
             average += (int) element.getValue();
         }
-        return average / disciplineMarks.size();
+        float result = 0;
+        try {
+            result = average / disciplineMarks.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return result;
+        }
+
     }
+
+    @Override
+    public String toString() {
+        return "{Nume Student: '" + getFirstName() + " " + getLastName() + "\'" +
+                ", Graduated: " + graduated +
+                ", Interview Score: " + "\'" + interviewScore  + "\'" +
+                ", Media finala: " + calculateAverageDisciplinesScore() +
+                '}' + "\n";
+    }
+
 }
