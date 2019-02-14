@@ -57,7 +57,9 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return getFirstName() + " " +
+                getLastname() + " :: " +
+                "Student{" +
                 "graduated=" + graduated +
                 ", score=" + score +
                 ", disciplineMarks=" + disciplineMarks +
