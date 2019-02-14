@@ -2,6 +2,7 @@ package roxanac;
 
 import roxanac.person.Person;
 import roxanac.student.Student;
+import roxanac.trainer.Trainer;
 
 public class ManagePerson {
 
@@ -26,5 +27,14 @@ public class ManagePerson {
         System.out.println(s1.getFirstName() + s1.getLastName() + s1.getDisciplineMarks());
 
         System.out.println(s1.calculateAverageDisciplineScore());
+
+        Trainer trainer1 = new Trainer("Andrei", "Popescu",35, "Masculin", "popescu.andrei@gmail.com", "automation testing", 6);
+        Trainer trainer2 = new Trainer("Ion", "Ionescu", 45, "Feminin", "ionescuion@gmail.com", "manual tasting", 2);
+
+        System.out.println(trainer1.getSpecialization());
+        System.out.println(trainer2.getYearsOfExperience());
+
+        s1.addFeedbackWithName();
+        System.out.println(trainer1.printDetails(););
     }
 }
