@@ -1,5 +1,6 @@
 package cosminac.person;
 
+import cosminac.person.trainer.Trainer;
 import cosminac.students.Student;
 
 public class ManagePerson {
@@ -23,7 +24,22 @@ public class ManagePerson {
         cosmina.addDisciplineMark("Geography", 5);
         System.out.println(cosmina.getDisciplineMarks());
         System.out.println(cosmina.calculateAverageDisciplinesScore());
+
+
+        Trainer trainer1 = new Trainer("Alex", "Math", 6);
+        Trainer trainer2 = new Trainer("Gabi", "Biology", 4);
+        trainer1.showDetails();
+        trainer2.showDetails();
+        trainer1.addFeedbackMarks("Alex", 9);
+        trainer2.addFeedbackMarks("Gabi", 10);
+        System.out.println(trainer1.getFeedbackMarks());
+        trainer1.setYearsOfExperience(5);
+
+        
+
     }
+
+
 
 }
 
