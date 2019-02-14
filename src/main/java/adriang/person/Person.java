@@ -79,4 +79,14 @@ public class Person {
         System.out.println("E-mail Adress: " + this.getEmailAddress());
 
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
+
 }

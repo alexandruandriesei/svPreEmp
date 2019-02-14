@@ -17,7 +17,6 @@ public class ManageTrainer {
         System.out.println("\n");
         jackdoe.getInfo();
 
-
     }
 
 }
