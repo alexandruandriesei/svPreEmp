@@ -1,4 +1,4 @@
-package student;
+package madalinacaraza.madalina.student;
 
 import madalinacaraza.madalina.person.Person;
 

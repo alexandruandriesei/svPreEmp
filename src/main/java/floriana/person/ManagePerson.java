@@ -1,6 +1,7 @@
 package floriana.person;
 
 import floriana.student.Student;
+import madalinacaraza.madalina.trainner.Trainner;
 
 public class ManagePerson {
 
@@ -19,4 +20,7 @@ public class ManagePerson {
 
         System.out.println(((Student) s1).getDisciplineMarks());
     }
+
 }
+
+
