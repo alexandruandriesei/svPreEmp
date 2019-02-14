@@ -1,6 +1,6 @@
 package petrutam.person;
 
-import student.Student;
+import petrutam.student.Student;
 
 public class ManagePerson {
     public static void main(String[] args) {

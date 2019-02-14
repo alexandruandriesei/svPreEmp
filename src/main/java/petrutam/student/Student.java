@@ -1,4 +1,4 @@
-package student;
+package petrutam.student;
 
 import petrutam.person.Person;
 
