@@ -6,6 +6,7 @@ import floriana.person.Person;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Trainer extends Person {
     private String specilization;
     private int yearsOfExperience;
@@ -52,7 +53,7 @@ public class Trainer extends Person {
     public void addFeedbackMark(int mark) {
         try {
         if(mark>=0 && mark<=10 )
-            feedbackMatksFromStudents.put("Anonim",mark);
+            feedbackMatksFromStudents.put("Anonim"+(i++),mark);
         else
             throw new IllegalArgumentException("Error!");
     } catch (IllegalArgumentException e) {
