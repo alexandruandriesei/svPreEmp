@@ -13,6 +13,7 @@ public class Trainer extends Person {
         super(firstName, lastName);
     }
 
+
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
@@ -50,13 +51,13 @@ public class Trainer extends Person {
     }
 
     public float calculateAverageFeedbackScore() {
+
         float marksSum = 0;
         float marksCount = list.size();
 
         for (Map.Entry<String, Integer> entry : list.entrySet()) {
             marksSum = marksSum + entry.getValue();
         }
-
         return marksSum / marksCount;
     }
 
@@ -68,4 +69,13 @@ public class Trainer extends Person {
         System.out.println("Average feedback mark: " + calculateAverageFeedbackScore());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-}
+    @Override
+    public String toString(){
+        StringBuilder obj=new StringBuilder();
+        obj.append("Trainer name: " + getFirstName() + " " + getLastName());
+        obj.append("Trainer specialization: " + getSpecialization());
+        obj.append("Years of experience: " + getYearsofexp());
+        obj.append("Student Feedback: " + getList());
+        obj.append("Average feedback mark: " + calculateAverageFeedbackScore());
+        return obj.toString();
+}}
