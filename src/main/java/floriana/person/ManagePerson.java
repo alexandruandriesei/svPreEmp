@@ -3,6 +3,7 @@ package floriana.person;
 import floriana.student.Student;
 import floriana.trainer.Trainer;
 
+
 public class ManagePerson {
 
     public static void main(String[] args) {
@@ -29,3 +30,5 @@ public class ManagePerson {
     }
 
 }
+
+

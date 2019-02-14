@@ -1,6 +1,8 @@
 package madalinacaraza.madalina.person;
 
+
 import madalinacaraza.student.Student;
+
 
 public class ManagePerson {
     public static void main(String[] args) {
@@ -25,6 +27,8 @@ public class ManagePerson {
         System.out.println(s1.getFirstName() + s1.getLastName() + s1.getDisciplineMarks());
 
         System.out.println(s1.calculateAverageDisciplinesScore());
+
+
 
     }
 }
