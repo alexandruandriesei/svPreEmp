@@ -1,5 +1,7 @@
 package alexc.person;
 
+import alexc.trainer.Trainer;
+
 import static java.lang.Boolean.*;
 
 public class ManagePerson {
@@ -12,12 +14,7 @@ public class ManagePerson {
         alex.setAge(23);
         alex.setGender("Male");
         alex.setEmailAddress("caciuralex@gmail.com");
-        alex.setEmailRestricted(TRUE);
-
-        //System.out.println("Numele persoanei este: " + alex.getLastName() + " " + alex.getFirstName());
-        //System.out.println("Varsta: "+alex.getAge()+" Gender: "+alex.getGender());
-        //System.out.println("Emailul este: "+alex.getEmailAddress());
-
+        alex.setEmailRestricted(FALSE);
         alex.getInfo();
     }
 }
