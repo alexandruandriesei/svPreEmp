@@ -46,8 +46,8 @@ public class Student extends Person {
         this.disciplineMarks.put(discipline, mark);
     }
 
-    public int calculateAverageDisciplinesScore() {
-        int averageScore = 0;
+    public float calculateAverageDisciplinesScore() {
+        float averageScore = 0;
         for( Map.Entry<String,Integer> i:disciplineMarks.entrySet()) {
             averageScore +=i.getValue();
 
@@ -58,11 +58,6 @@ public class Student extends Person {
     @Override
     public String toString() {
         return getFirstName() + " " +
-                getLastname() + " :: " +
-                "Student{" +
-                "graduated=" + graduated +
-                ", score=" + score +
-                ", disciplineMarks=" + disciplineMarks +
-                '}';
+                getLastname() + " :: ";
     }
 }
