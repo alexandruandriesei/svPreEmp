@@ -1,9 +1,6 @@
 package madalinacaraza.madalina.trainner;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import madalinacaraza.madalina.person.Person;
-
-import javax.print.DocFlavor;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -64,13 +61,16 @@ public class Trainner extends Person {
 
     public float calculateAverageFeedbackScore() {
         int score = 0;
+        int count =0;
         Set set = feedbackMarks.entrySet();
         Iterator iterator = set.iterator();
         while (iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry) iterator.next();
+            Map.Entry mentry = (Map.Entry)iterator.next();
             score = score + (int) mentry.getValue();
+            count += 1;
         }
-        float scoreAvarege = (float) score / feedbackMarks.size();
+        float scoreAvarege = (float) score / count;
+
         return scoreAvarege;
 
 

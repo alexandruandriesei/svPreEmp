@@ -69,6 +69,5 @@ public class ManagePerson {
         presession.addTrainer(trainer4);
         presession.printDetailsProgram();
         System.out.println(presession.toString());
-
     }
 }
