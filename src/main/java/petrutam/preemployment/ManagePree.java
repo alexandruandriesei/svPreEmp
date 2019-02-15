@@ -1,5 +1,4 @@
-package preemployment;
-
+package petrutam.preemployment;
 
 import petrutam.student.Student;
 import petrutam.trainer.Trainer;
@@ -8,7 +7,7 @@ public class ManagePree {
 
 
     public static void main(String[] args) {
-        Session pro= new Session(2019,"preemployment","Auto") ;
+        Session pro= new Session(2019, "petrutam/preemployment","Auto") ;
 
         Student petr = new Student("Petruta", "Maties", true, 8);
         Student mada = new Student("Mada", "Cevaa", true, 7);

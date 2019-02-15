@@ -1,4 +1,4 @@
-package trainer;
+package petrutam.trainer;
 
 
 public class ManageTainer {

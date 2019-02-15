@@ -1,5 +1,4 @@
-package preemployment;
-
+package petrutam.preemployment;
 
 import petrutam.student.Student;
 import petrutam.trainer.Trainer;
