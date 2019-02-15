@@ -8,6 +8,7 @@ import java.util.Map;
 
 
 public class Trainer extends Person {
+    public static int i=0;
     private String specilization;
     private int yearsOfExperience;
     private Map<String, Integer> feedbackMatksFromStudents = new HashMap<>();
@@ -53,7 +54,7 @@ public class Trainer extends Person {
     public void addFeedbackMark(int mark) {
         try {
         if(mark>=0 && mark<=10 )
-            feedbackMatksFromStudents.put("Anonim"+(i++),mark);
+            feedbackMatksFromStudents.put("Anonim#"+(++i),mark);
         else
             throw new IllegalArgumentException("Error!");
     } catch (IllegalArgumentException e) {
@@ -72,14 +73,19 @@ public class Trainer extends Person {
         }
     }
 
+    public float averageFeedbackScore() {
+        float averageScore = 0;
+        for( Map.Entry<String,Integer> i:feedbackMatksFromStudents.entrySet()) {
+            averageScore +=i.getValue();
+
+        }
+        return averageScore/feedbackMatksFromStudents.size();
+    }
+
+
     @Override
     public String toString() {
         return getFirstName() + " " +
-                getLastname() + " :: " +
-                "Trainer{" +
-                "specilization='" + specilization + '\'' +
-                ", yearsOfExperience=" + yearsOfExperience +
-                ", feedbackMatksFromStudents=" + feedbackMatksFromStudents +
-                '}';
+                getLastname();
     }
 }
