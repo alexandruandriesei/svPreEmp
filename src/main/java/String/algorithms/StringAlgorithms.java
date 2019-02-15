@@ -1,4 +1,4 @@
-package string.algorithms;
+package String.algorithms;
 
 import java.util.Arrays;
 
@@ -44,7 +44,7 @@ public class StringAlgorithms {
         int i = 0;
         int n = stringArray.length - 1;
 
-        while (i <= n) {
+        while (i <= n/2) {
             if (stringArray[i] != stringArray[n]) {
                 return false;
             }

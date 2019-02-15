@@ -70,7 +70,5 @@ public class ManagePerson {
         presession.printDetailsProgram();
         System.out.println(presession.toString());
 
-
-
     }
 }

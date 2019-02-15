@@ -1,5 +1,5 @@
 import hello.world.HelloWorld;
-import string.algorithms.StringAlgorithms;
+import String.algorithms.StringAlgorithms;
 
 /**
  * Class used for running different pre-employment program scenarios.
@@ -11,7 +11,7 @@ public class MyFirstProject {
      * a switch statement.
      *
      * @param args contains the functionality to be executed and the required
-     *            arguments for each execution path.
+     *             arguments for each execution path.
      */
     public static void main(final String[] args) {
 
@@ -22,17 +22,17 @@ public class MyFirstProject {
                 HelloWorld.writeHelloWorld();
                 break;
             case Constants.ANAGRAMS:
-                if(StringAlgorithms.checkStringsAreAnagrams(args[1], args[2])) {
+                if (StringAlgorithms.checkStringsAreAnagrams(args[1], args[2])) {
                     System.out.println("Strings " + args[1] + " and " + args[2] + " are anagrams.");
                 } else {
                     System.out.println("Strings " + args[1] + " and " + args[2] + " are NOT anagrams.");
                 }
                 break;
             case Constants.PALINDROME:
-                if(StringAlgorithms.checkStringIsPalindrome(args[1])) {
-                    System.out.println("String " + args[1] + " is a palindrome.");
+                if (StringAlgorithms.checkStringIsPalindrome(args[2])) {
+                    System.out.println("String " + args[2] + " is a palindrome.");
                 } else {
-                    System.out.println("String " + args[1] + " is NOT a palindrome.");
+                    System.out.println("String " + args[2] + " is NOT a palindrome.");
                 }
                 break;
             default:
