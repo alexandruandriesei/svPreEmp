@@ -1,12 +1,16 @@
 package madalinacaraza.madalina.person;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import madalinacaraza.student.Student;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class ManagePerson {
     public static void main(String[] args) {
-        Person madaPerson = new Person("Madalina" , "Caraza" , 34 , "Feminin", "madalinacaraza@yahoo.com");
+        Person madaPerson = new Person("Madalina", "Caraza", 34, "Feminin", "madalinacaraza@yahoo.com");
         System.out.println("Studentul este " + madaPerson.getFirstName() + " " + madaPerson.getLastName() + " " + "si are varsta " + madaPerson.getAge() + " " + " sexul " + madaPerson.getGender() + " si adresa de email " + madaPerson.getEmailAddress());
 
         madaPerson.setEmailRestricted(true);
@@ -29,6 +33,13 @@ public class ManagePerson {
         System.out.println(s1.calculateAverageDisciplinesScore());
 
 
-
+        ObjectMapper my_object = new ObjectMapper();
+        try {
+            Student student = my_object.readValue("madalina\\student.json", Student.class);
+        } catch (FileNotFoundException fe) {
+            fe.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
