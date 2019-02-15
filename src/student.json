@@ -1,0 +1,10 @@
+{
+  "firstName": "John",
+  "lastName": "Vasile",
+  "age": 22,
+  "gender": "M",
+  "graduated": true,
+  "isEmailRestricted": true,
+  "emailAddress": "vasile.john@google.com",
+  "interviewScore": 10
+}
