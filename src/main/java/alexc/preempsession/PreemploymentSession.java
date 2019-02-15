@@ -16,7 +16,7 @@ public class PreemploymentSession {
     public PreemploymentSession(int year, String community, String type) {
         this.year = year;
         this.community = community;
-        if (type.toUpperCase() == "MANUAL" || type.toUpperCase() == "AUTO") {
+        if (type.toUpperCase().equalsIgnoreCase( "MANUAL") || type.toUpperCase().equalsIgnoreCase( "AUTO")) {
             this.type = type;
         } else {
             System.out.println("Type must be AUTO or MANUAL");
@@ -90,7 +90,7 @@ public class PreemploymentSession {
     }
 
     public static void main(String[] args) {
-        PreemploymentSession pre = new PreemploymentSession(2019, "Automation", "MANUAL");
+        PreemploymentSession pre = new PreemploymentSession(2019, "Automation", "Manual");
         Student student1 = new Student("Alex", "Caciur", Boolean.TRUE, 21);
         Student student2 = new Student("Adrian", "Grami", Boolean.TRUE, 10);
         pre.addStudent(student1);
@@ -99,6 +99,8 @@ public class PreemploymentSession {
         student2.addDisciplineMark("Biologie", 9);
         student1.addDisciplineMark("Biologie", 8);
         student2.addDisciplineMark("Biologie", 4);
+        student1.setGender("Male");
+        student2.setGender("Female");
 
         Trainer trainer1 = new Trainer("Alex", "Andriesei");
         Trainer trainer2 = new Trainer("Gabriel", "Hrenciuc");
