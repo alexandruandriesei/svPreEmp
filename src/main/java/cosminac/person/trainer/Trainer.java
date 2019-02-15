@@ -15,7 +15,7 @@ public class Trainer extends Person {
     private HashMap<String, Integer> feedbackMarks = new HashMap<>();
 
     public Trainer(String firstName, String specialization, int yearsOfExperience) {
-        super.firstName=firstName;
+        super.firstName = firstName;
         this.specialization = specialization;
         this.yearsOfExperience = yearsOfExperience;
 
@@ -59,7 +59,24 @@ public class Trainer extends Person {
         feedbackMarks.put(name, mark);
     }
 
+    public float calculateTrainersDisciplinesScore () {
+        int mark = 0;
+        int number = 0;
 
+        Set set = feedbackMarks.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry disciplines = (Map.Entry)iterator.next();
+            mark+= (int)disciplines.getValue();
+            number++;
+        }
 
+        return (float)mark/number;
+    }
+
+    public String toString() {
+
+        return "trainer: " + getFirstName() + "Specialization: " + getSpecialization() + "Years of experience: " + getYearsOfExperience();
+    }
 
 }
