@@ -1,7 +1,5 @@
 package alexc.person;
 
-import alexc.trainer.Trainer;
-
 import static java.lang.Boolean.*;
 
 public class ManagePerson {
