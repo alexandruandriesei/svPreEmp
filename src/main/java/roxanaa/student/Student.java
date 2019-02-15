@@ -3,6 +3,7 @@ package roxanaa.student;
 import roxanaa.person.Person;
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.String;
 
 public class Student extends Person {
 
@@ -54,10 +55,20 @@ public class Student extends Person {
         for (Map.Entry element : disciplineMarks.entrySet()) {
             suma += (int) element.getValue();
         }
-        return suma / disciplineMarks.size();
-
+        try {
+            return suma / disciplineMarks.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return suma/ disciplineMarks.size();
     }
 
+    @Override
+    public String toString() {
+        return "Student: " +
+                firstName + " " + lastName +
+                " a primit la fiecare disciplina urmatoarele note: " + disciplineMarks;
 
+    }
 }
 

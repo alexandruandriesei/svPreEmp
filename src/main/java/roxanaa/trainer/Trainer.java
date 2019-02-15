@@ -69,4 +69,14 @@ public class Trainer extends Person {
         }
         return sum / feedbackMarks.size();
     }
+
+    @Override
+    public String toString() {
+        return "Trainerul " + firstName + " "+ lastName + " a primit de la studenti notele de feedback: " +feedbackMarks;
+
+              /*  "feedbackMarks=" + feedbackMarks +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}'; */
+    }
 }
