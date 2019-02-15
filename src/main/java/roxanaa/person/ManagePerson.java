@@ -1,8 +1,11 @@
 package roxanaa.person;
 
+import java.io.*;
 import java.lang.String;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.InvalidDefinitionException;
 import roxanaa.student.Student;
-import roxanaa.trainer.Trainer;
 
 public class ManagePerson {
     public static void main(String[] args) {
@@ -29,5 +32,18 @@ public class ManagePerson {
 
         roxanaStudent.calculateAverageDisciplineMarks();
         System.out.println(roxanaStudent.calculateAverageDisciplineMarks());
+
+        ObjectMapper objMapper = new ObjectMapper();
+
+        try {
+            Student audrey = objMapper.readValue(new File("src/main/resources/roxanaa/student.json"), Student.class);
+            System.out.println(audrey.firstName + " " + audrey.lastName + ". Has graduated: " + audrey.isGraduated()
+                    + " and she received the following grade: " + audrey.getInterviewScore());
+        } catch (FileNotFoundException exceptie) {
+            exceptie.printStackTrace();
+        } catch (IOException exceptie1) {
+            exceptie1.printStackTrace();
+        }
+
     }
 }

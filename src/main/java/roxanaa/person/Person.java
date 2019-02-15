@@ -1,8 +1,5 @@
 package roxanaa.person;
 
-import com.sun.istack.internal.localization.NullLocalizable;
-import java.sql.SQLOutput;
-
 public class Person {
 
     protected String firstName;
@@ -10,12 +7,16 @@ public class Person {
     private int age;
     private String gender;
     private String emailAddress;
-    private boolean isEmailRestricted;
+    private Boolean isEmailRestricted;
 
     public Person() {
     }
 
-    public Person(boolean isEmailRestricted) {
+    public Person(int age){
+        this.age = age;
+    }
+
+    public Person(Boolean isEmailRestricted) {
         this.isEmailRestricted = isEmailRestricted;
     }
 
@@ -23,7 +24,7 @@ public class Person {
         return isEmailRestricted;
     }
 
-    public void setEmailRestricted(boolean emailRestricted) {
+    public void setEmailRestricted(Boolean emailRestricted) {
         isEmailRestricted = emailRestricted;
     }
 
@@ -52,7 +53,16 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age<18 || age >100) {
+            throw new IllegalArgumentException();
+        }
+        else if (age < this.age) {
+            throw new IllegalArgumentException();
+        }
+        else
+            {
+             this.age = age;
+            }
     }
 
     public String getGender() {
@@ -68,11 +78,13 @@ public class Person {
     }
 
     public String getEmailAddress() {
+        if (isEmailRestricted == null) {
+            throw new NullPointerException();
+        }
         if (!isEmailRestricted) {
             return emailAddress;
         } else {
             return "Mail is restricted.";
-
         }
     }
 

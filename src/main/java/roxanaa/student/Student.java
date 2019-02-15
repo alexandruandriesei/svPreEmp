@@ -15,6 +15,9 @@ public class Student extends Person {
     private static String code;
     private int average;
 
+    public Student() {
+    }
+
     public boolean isGraduated() {
         return graduated;
     }
