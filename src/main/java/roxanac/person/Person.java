@@ -5,12 +5,12 @@ package roxanac.person;
 public class Person {
     private String firstName;
     private String lastName;
-    int age;
+    private Integer age;
     private String gender;
     private String email;
     private Boolean emailrestricted;
 
-    public Person(String firstName, String lastName, int age, String gender, String email) {
+    public Person(String firstName, String lastName, Integer age, String gender, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -41,11 +41,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
