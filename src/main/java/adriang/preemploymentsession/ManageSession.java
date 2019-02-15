@@ -16,9 +16,9 @@ public class ManageSession {
 
         // Default Trainer
         Trainer johndoe = new Trainer("John", "Doe", "Informatica", 5);
-        johndoe.setFeedBackMarks("Gicu", 6);
-        johndoe.setFeedBackMarks("Mirel", 6);
-        johndoe.setFeedBackMarks("Andy", 8);
+        johndoe.addFeedBackMarks("Gicu", 6);
+        johndoe.addFeedBackMarks("Mirel", 6);
+        johndoe.addFeedBackMarks("Andy", 8);
 
 
         PreEmploymentSession list = new PreEmploymentSession(1, "teest", true);
@@ -37,13 +37,13 @@ public class ManageSession {
         list.addTrainerList(johndoe);
 
         list.addTrainerList(new Trainer("Mircea", "Boss", "OOP", 7));
-        list.getTrainerList().get(1).setFeedBackMarks("Prezentare", 5);
-        list.getTrainerList().get(1).setFeedBackMarks("Code", 5);
+        list.getTrainerList().get(1).addFeedBackMarks("Prezentare", 5);
+        list.getTrainerList().get(1).addFeedBackMarks("Code", 5);
 
 
         list.addTrainerList(new Trainer("Grigore", "Ureche", "Tesst", 5));
-        list.getTrainerList().get(2).setFeedBackMarks("Test", 9);
-        list.getTrainerList().get(2).setFeedBackMarks("PocPocPoc", 10);
+        list.getTrainerList().get(2).addFeedBackMarks("Test", 9);
+        list.getTrainerList().get(2).addFeedBackMarks("PocPocPoc", 10);
 
 
         System.out.println("Avem un numar de " + list.getStudentsList().size() + " studenti!" + "\n" + list.getStudentsList());
