@@ -43,12 +43,24 @@ public class PreemploymentSession {
         this.trainerList.add(trainer);
     }
 
-    public List<Trainer> getTrainerList() {
-        return trainerList;
+    public void getTrainerList() {
+        String obj="";
+        for (Trainer trainer : trainerList) {
+            obj = obj + trainer.getFirstName() + " " + trainer.getLastName() +
+                    ", Years of experience: "+trainer.getYearsofexp()+"\n";
+        }
+        System.out.println(obj);
+
     }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public void getStudentList() {
+        String obj="";
+        for (Student student : studentList) {
+            obj = obj + student.getFirstName() + " " + student.getLastName() +
+                    ", Interview Score:"+student.getInterviewScore()+"; Highest average mark: "+
+                    student.calculateAverageDisciplinesScore()+"\n";
+        }
+        System.out.println(obj);
     }
 
     public float getHighestAverageMark() {
@@ -80,11 +92,14 @@ public class PreemploymentSession {
     }
 
     public void getProgramDetails() {
+        System.out.println("~Preemployment Session~");
         System.out.println("Year: " + getYear());
         System.out.println("Community: " + getCommunity());
         System.out.println("Type: " + getType());
-        System.out.println("Studentii sunt: " + getStudentList());
-        System.out.println("Trainerii sunt: " + getTrainerList());
+        System.out.println("Studentii sunt: ");
+        getStudentList();
+        System.out.println("Trainerii sunt: ");
+        getTrainerList();
         System.out.println("The highest average score of students is: " + getHighestAverageMark());
         System.out.println("The best rated trainer is: " + getBestRatedTrainer());
     }
@@ -124,28 +139,6 @@ public class PreemploymentSession {
         pre.addTrainer(trainer1);
         pre.addTrainer(trainer2);
         pre.getProgramDetails();
-    }
-
-    @Override
-    public String toString() {
-        String obj =
-
-                "\n----- Year : " + this.getYear() +
-                        "\n----- Community : " + this.getCommunity() +
-                        "\n----- Type : " + this.getType() +
-                        "\n----- Students : ";
-        for (Student student : studentList) {
-            obj = obj + student.getFirstName() + " " + student.getLastName() + ", ";
-        }
-
-
-        obj += "----- Greatest Student Average Score : " + this.getHighestAverageMark() + "\n"
-                + "----- Best Rated Trainers according to the students' feedback: " +
-                this.getBestRatedTrainer();
-
-        return obj;
-
-
     }
 }
 
