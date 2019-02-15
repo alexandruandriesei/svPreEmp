@@ -1,7 +1,7 @@
-package preemployment;
+package petrutam.preemployment;
 
-import student.Student;
-import trainer.Trainer;
+import petrutam.student.Student;
+import petrutam.trainer.Trainer;
 
 import java.util.*;
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class Session {
         }
         System.out.println();
         System.out.println("Highest average score of students: " + average());
-        System.out.println("Best rated trainer: " + averageFeedback());
+        System.out.println("Best rated petrutam.trainer: " + averageFeedback());
     }
 
     public void addStudentToList(Student student) {

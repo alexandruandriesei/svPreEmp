@@ -1,4 +1,4 @@
-package trainer;
+package petrutam.trainer;
 import java.util.Iterator;
 import java.util.Map;
 

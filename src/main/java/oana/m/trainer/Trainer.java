@@ -24,8 +24,8 @@ public class Trainer extends Person {
      * @param age din clasa persoana
      * @param gender din clasa persoana
      * @param emailAddress din clasa persoana
-     * @param specialization din clasa trainer
-     * @param yearsOfExperience din clasa trainer
+     * @param specialization din clasa petrutam.trainer
+     * @param yearsOfExperience din clasa petrutam.trainer
      */
     public Trainer(String firstName, String lastName, int age, String gender, String emailAddress, String specialization, int yearsOfExperience) {
         super(firstName, lastName, age, gender, emailAddress);
@@ -75,7 +75,7 @@ public class Trainer extends Person {
     }
 
     public void seeAllDetails() {
-        System.out.println("Nume trainer: " + super.firstName + " " + getLastName() + ".   gen: " + getGender() + ".   email address: " + super.getEmailAddress() + ".   Specializare: " + specialization +
+        System.out.println("Nume petrutam.trainer: " + super.firstName + " " + getLastName() + ".   gen: " + getGender() + ".   email address: " + super.getEmailAddress() + ".   Specializare: " + specialization +
                 ".   Ani de experienta: " + yearsOfExperience + ".    Feedback marks:" + getFeedbackMarks());
     }
 
