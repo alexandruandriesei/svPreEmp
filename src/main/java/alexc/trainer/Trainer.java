@@ -69,13 +69,4 @@ public class Trainer extends Person {
         System.out.println("Average feedback mark: " + calculateAverageFeedbackScore());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-    @Override
-    public String toString(){
-        StringBuilder obj=new StringBuilder();
-        obj.append("Trainer name: " + getFirstName() + " " + getLastName());
-        obj.append("Trainer specialization: " + getSpecialization());
-        obj.append("Years of experience: " + getYearsofexp());
-        obj.append("Student Feedback: " + getList());
-        obj.append("Average feedback mark: " + calculateAverageFeedbackScore());
-        return obj.toString();
-}}
+}
