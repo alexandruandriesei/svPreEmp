@@ -49,7 +49,7 @@ public class Trainer extends Person {
         return feedBackMarks;
     }
 
-    public void setFeedBackMarks(String name, int mark) {
+    public void addFeedBackMarks(String name, int mark) {
         this.feedBackMarks.put(name, mark);
     }
 
@@ -68,5 +68,12 @@ public class Trainer extends Person {
         System.out.println("Ani de experienta: " + getYearsOfExperience());
         System.out.println("Student/Feedback: " + getFeedBackMarks());
         System.out.println("Media totala in urma feedback: " + calculateAverageFeedback());
+    }
+
+    @Override
+    public String toString() {
+        return "Trainer: " + "\'" + getFirstName() + " "  +getLastName() + "\'" +
+                " All-FeedBack" + feedBackMarks + " " + calculateAverageFeedback() +
+                '}' + "\n";
     }
 }

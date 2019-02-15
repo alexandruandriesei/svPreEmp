@@ -1,18 +1,13 @@
 package alexc.student;
 
 import alexc.person.Person;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
+import java.util.*;
 import static java.lang.Boolean.TRUE;
 
 public class Student extends Person {
     private Boolean graduated;
     private Integer interviewScore;
     private HashMap<String, Integer> disciplineMarks = new HashMap<>();
-    private static String code;
 
     public Student(String firstName, String lastName, Boolean graduated, Integer interviewScore) {
         super(firstName, lastName);
@@ -23,6 +18,7 @@ public class Student extends Person {
     public Boolean getGraduated() {
         return graduated;
     }
+
 
     public Integer getInterviewScore() {
         return interviewScore;
@@ -36,15 +32,18 @@ public class Student extends Person {
         this.disciplineMarks.put(discipline, mark);
     }
 
-    public void calculateAverageDisciplinesScore() {
-        int mark = 0;
+    public float calculateAverageDisciplinesScore() {
+        float markSum = 0;
+        float marksCount = disciplineMarks.size();
         Set set = disciplineMarks.entrySet();
-        Iterator iterator = set.iterator();
-        while (iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry) iterator.next();
-            mark += (int) mentry.getValue();
+        for (Map.Entry<String, Integer> entry : disciplineMarks.entrySet()) {
+            markSum += (float) entry.getValue();
         }
-        System.out.println("The average mark is: " + mark / disciplineMarks.size());
+        if (disciplineMarks.size() == 0) {
+            return 0;
+        } else {
+            return markSum / marksCount;
+        }
     }
 
     public static void main(String[] args) {
@@ -52,7 +51,7 @@ public class Student extends Person {
         Student alex = new Student("Alex", "Caciur", TRUE, 5);
         alex.setGender("Male");
         System.out.println("Name: " + alex.getLastName() + " " + alex.getFirstName());
-        System.out.println("Gender: "+alex.getGender());
+        System.out.println("Gender: " + alex.getGender());
         System.out.println("Graduated: " + alex.getGraduated());
         System.out.println("Interview score: " + alex.getInterviewScore());
 
@@ -65,8 +64,5 @@ public class Student extends Person {
         System.out.println("Disciplines-grades: " + alex.getDisciplineMarks());
 
         alex.calculateAverageDisciplinesScore();
-
-
-
     }
 }

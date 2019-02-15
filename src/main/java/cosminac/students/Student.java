@@ -15,10 +15,12 @@ public class Student extends Person {
     private HashMap<String, Integer> disciplineMarks = new HashMap<> ();
 
     public static String getCode() {
+
         return code;
     }
 
     public static void setCode(String code) {
+
         Student.code = code;
     }
 
@@ -58,12 +60,13 @@ public class Student extends Person {
     }
 
     public void addDisciplineMark(String discipline, Integer mark) {
-       this.disciplineMarks.put(discipline, mark);
+
+        this.disciplineMarks.put(discipline, mark);
     }
 
     public float calculateAverageDisciplinesScore () {
-        int mark=0;
-        int number=0;
+        int mark = 0;
+        int number = 0;
 
         Set set = disciplineMarks.entrySet();
         Iterator iterator = set.iterator();
@@ -72,11 +75,27 @@ public class Student extends Person {
             mark+= (int)disciplines.getValue();
             number++;
         }
+        try {
+            return (float)mark/number;
 
-        return (float)mark/number;
+        } catch (Exception e) {
+            System.out.println("An error appeared " + e.getMessage());
+            return 0;
+        }
+
     }
 
 
-    
+    @Override
+    public String toString() {
+        return  "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", interviewScore=" + interviewScore +
+                '}';
+    }
+
+
+
+
 }
 

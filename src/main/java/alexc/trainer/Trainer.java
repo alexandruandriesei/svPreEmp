@@ -13,6 +13,7 @@ public class Trainer extends Person {
         super(firstName, lastName);
     }
 
+
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
@@ -50,13 +51,13 @@ public class Trainer extends Person {
     }
 
     public float calculateAverageFeedbackScore() {
+
         float marksSum = 0;
         float marksCount = list.size();
 
         for (Map.Entry<String, Integer> entry : list.entrySet()) {
             marksSum = marksSum + entry.getValue();
         }
-
         return marksSum / marksCount;
     }
 
