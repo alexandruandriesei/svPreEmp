@@ -1,6 +1,6 @@
 package roxanac.person;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 
 public class Person {
     private String firstName;
