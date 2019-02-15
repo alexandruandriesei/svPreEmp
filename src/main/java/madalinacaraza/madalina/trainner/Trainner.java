@@ -1,9 +1,6 @@
 package madalinacaraza.madalina.trainner;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import madalinacaraza.madalina.person.Person;
-
-import javax.print.DocFlavor;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

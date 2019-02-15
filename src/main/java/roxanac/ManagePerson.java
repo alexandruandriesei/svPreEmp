@@ -70,5 +70,10 @@ public class ManagePerson {
         presession.printDetailsProgram();
         System.out.println(presession.toString());
 
+<<<<<<< HEAD
+=======
+       /* s1.addFeedbackWithName();
+        System.out.println(trainer1.printDetails());*/
+>>>>>>> Trainer modifier
     }
 }
