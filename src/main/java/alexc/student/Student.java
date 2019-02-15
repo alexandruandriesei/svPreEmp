@@ -1,9 +1,7 @@
 package alexc.student;
 
 import alexc.person.Person;
-
 import java.util.*;
-
 import static java.lang.Boolean.TRUE;
 
 public class Student extends Person {
@@ -39,7 +37,7 @@ public class Student extends Person {
         float marksCount = disciplineMarks.size();
         Set set = disciplineMarks.entrySet();
         for (Map.Entry<String, Integer> entry : disciplineMarks.entrySet()) {
-            markSum += (float)entry.getValue();
+            markSum += (float) entry.getValue();
         }
         if (disciplineMarks.size() == 0) {
             return 0;
@@ -47,12 +45,13 @@ public class Student extends Person {
             return markSum / marksCount;
         }
     }
+
     public static void main(String[] args) {
 
         Student alex = new Student("Alex", "Caciur", TRUE, 5);
         alex.setGender("Male");
         System.out.println("Name: " + alex.getLastName() + " " + alex.getFirstName());
-        System.out.println("Gender: "+alex.getGender());
+        System.out.println("Gender: " + alex.getGender());
         System.out.println("Graduated: " + alex.getGraduated());
         System.out.println("Interview score: " + alex.getInterviewScore());
 
@@ -66,14 +65,4 @@ public class Student extends Person {
 
         alex.calculateAverageDisciplinesScore();
     }
-    @Override
-    public String toString(){
-        StringBuilder obj=new StringBuilder();
-        obj.append("Name:\n " + getLastName() + " " + getFirstName());
-        obj.append("Gender: "+getGender());
-        obj.append("Graduated: " + getGraduated());
-        obj.append("Interview score: " + getInterviewScore());
-        return obj.toString();
-    }
-
 }

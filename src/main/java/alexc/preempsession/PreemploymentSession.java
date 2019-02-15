@@ -2,7 +2,6 @@ package alexc.preempsession;
 
 import alexc.student.Student;
 import alexc.trainer.Trainer;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class PreemploymentSession {
     public PreemploymentSession(int year, String community, String type) {
         this.year = year;
         this.community = community;
-        if (type.toUpperCase().equalsIgnoreCase( "MANUAL") || type.toUpperCase().equalsIgnoreCase( "AUTO")) {
+        if (type.toUpperCase().equalsIgnoreCase("MANUAL") || type.toUpperCase().equalsIgnoreCase("AUTO")) {
             this.type = type;
         } else {
             System.out.println("Type must be AUTO or MANUAL");
@@ -44,21 +43,21 @@ public class PreemploymentSession {
     }
 
     public void getTrainerList() {
-        String obj="";
+        String obj = "";
         for (Trainer trainer : trainerList) {
             obj = obj + trainer.getFirstName() + " " + trainer.getLastName() +
-                    ", Years of experience: "+trainer.getYearsofexp()+"\n";
+                    ", Years of experience: " + trainer.getYearsofexp() +"\n";
         }
         System.out.println(obj);
 
     }
 
     public void getStudentList() {
-        String obj="";
+        String obj = "";
         for (Student student : studentList) {
             obj = obj + student.getFirstName() + " " + student.getLastName() +
-                    ", Interview Score:"+student.getInterviewScore()+"; Highest average mark: "+
-                    student.calculateAverageDisciplinesScore()+"\n";
+                    ", Interview Score:" + student.getInterviewScore() + "; Highest average mark: " +
+                    student.calculateAverageDisciplinesScore() +"\n";
         }
         System.out.println(obj);
     }
