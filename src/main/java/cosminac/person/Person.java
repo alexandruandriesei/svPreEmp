@@ -7,7 +7,7 @@ public class Person {
     private int age;
     private String gender;
     private String emailAddress;
-    private boolean isEmailRestricted;
+    private Boolean isEmailRestricted;
 
     public Person(String firstName, String lastName, String gender, String emailAddress, Boolean isEmailRestricted) {
         this.firstName = firstName;
@@ -15,6 +15,11 @@ public class Person {
         this.gender = gender;
         this.emailAddress = emailAddress;
         this.isEmailRestricted = isEmailRestricted;
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -34,10 +39,14 @@ public class Person {
     }
 
     public String getEmailAddress() {
-        if(!isEmailRestricted()) {
-            return emailAddress;
+        if(isEmailRestricted == null) {
+            throw new NullPointerException("Email address is restricted for this customer! Sorry!");
         } else {
-            throw new IllegalAccessError("Email address is restricted for this customer! Sorry!");
+            if (!isEmailRestricted) {
+                return emailAddress;
+            } else {
+                throw new IllegalArgumentException("Email address is restricted for this customer! Sorry!");
+            }
         }
     }
 
@@ -50,14 +59,18 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+
+        if (age < 18 || age > 100)
+            throw new ArithmeticException("Insert a correct value for age!");
+        else
+            this.age = age;
     }
 
-    public boolean isEmailRestricted() {
+    public Boolean isEmailRestricted() {
         return isEmailRestricted;
     }
 
-    public void setEmailRestricted(boolean emailRestricted) {
+    public void setEmailRestricted(Boolean emailRestricted) {
         isEmailRestricted = emailRestricted;
     }
 
