@@ -7,11 +7,11 @@ public class ManageTrainer {
         Trainer johndoe = new Trainer("John", "Doe", "Informatica", 5);
         Trainer jackdoe = new Trainer("Jacky", "Eod", "Physics", 14);
 
-        johndoe.setFeedBackMarks("Gicu", 6);
-        johndoe.setFeedBackMarks("Mirel", 6);
-        johndoe.setFeedBackMarks("Andy", 8);
-        jackdoe.setFeedBackMarks("Andrei", 8);
-        jackdoe.setFeedBackMarks("Gigi", 7);
+        johndoe.addFeedBackMarks("Gicu", 6);
+        johndoe.addFeedBackMarks("Mirel", 6);
+        johndoe.addFeedBackMarks("Andy", 8);
+        jackdoe.addFeedBackMarks("Andrei", 8);
+        jackdoe.addFeedBackMarks("Gigi", 7);
 
         johndoe.getInfo();
         System.out.println("\n");
