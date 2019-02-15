@@ -73,7 +73,7 @@ public class Person {
                 "x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")) {
             this.emailAddress = emailAddress;
         } else {
-            throw new IllegalArgumentException("Invalid email Address ");
+            throw  new IllegalArgumentException("Invalid");
         }
 
     }
