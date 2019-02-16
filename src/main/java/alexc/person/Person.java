@@ -73,7 +73,7 @@ public class Person {
     }
 
     public String getEmailAddress() {
-        if (getEmailRestricted()) {
+        if ((getEmailRestricted()!=null)&&(getEmailRestricted())) {
             System.out.println("Email is restricted.");
             throw new IllegalAccessError();
         } else return emailAddress;
@@ -92,6 +92,18 @@ public class Person {
         System.out.println("Age: " + getAge());
         System.out.println("Gender: " + getGender());
         System.out.println("Email: " + getEmailAddress());
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Person : \n").append("{").append("\n\t").append("  FirstName: ").append(this.getFirstName())
+                .append("\n\t").append("  LastName: ").append(this.getLastName())
+                .append("\n\t").append("  Age:").append(this.getAge())
+                .append("\n\t").append("  Gender:").append(this.getGender())
+                .append("\n\t").append("  EmailAddress:").append(this.getEmailAddress())
+                .append("\n\t").append("  IsEmailRestricted:").append(this.getEmailRestricted()).append("\n}");
+        return sb.toString();
     }
 }
 

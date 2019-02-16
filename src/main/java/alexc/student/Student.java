@@ -1,7 +1,11 @@
 package alexc.student;
 
 import alexc.person.Person;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import static java.lang.Boolean.TRUE;
 
 public class Student extends Person {
@@ -46,6 +50,34 @@ public class Student extends Person {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Student : \n").append("{").append("\n\t").append("  FirstName: ").append(this.getFirstName())
+                .append("\n\t").append("  LastName: ").append(this.getLastName())
+                .append("\n\t").append("  Age:").append(this.getAge())
+                .append("\n\t").append("  Gender:").append(this.getGender());
+        if ((this.getEmailRestricted() != null)&& (this.getEmailRestricted())) {
+            sb.append("  EmailAddress: #Confidential information#");
+        } else {
+            sb.append("\n\t").append("  EmailAddress:").append(this.getEmailAddress());
+        }
+        sb.append("\n\t").append("  IsEmailRestricted:").append(this.getEmailRestricted())
+                .append("\n\t").append("  Graduated:").append(this.getGraduated())
+                .append("\n\t").append("  InterviewScore:").append(this.getInterviewScore())
+                .append("\n\t").append("Discipline marks: ");
+        if ((this.getDisciplineMarks() != null) && (this.getDisciplineMarks().size() <= 0)) {
+            sb.append("None");
+        } else {
+            for (Map.Entry entry : this.getDisciplineMarks().entrySet()) {
+                sb.append("\n\t\t").append(entry.getKey()).append(": ").append(entry.getValue());
+            }
+        }
+        sb.append("\n}");
+        return sb.toString();
+
+    }
+
     public static void main(String[] args) {
 
         Student alex = new Student("Alex", "Caciur", TRUE, 5);
@@ -64,5 +96,7 @@ public class Student extends Person {
         System.out.println("Disciplines-grades: " + alex.getDisciplineMarks());
 
         alex.calculateAverageDisciplinesScore();
+
+
     }
 }

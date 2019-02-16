@@ -69,4 +69,32 @@ public class Trainer extends Person {
         System.out.println("Average feedback mark: " + calculateAverageFeedbackScore());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Trainer : \n").append("{").append("\n\t").append("  FirstName: ").append(this.getFirstName())
+                .append("\n\t").append("  LastName: ").append(this.getLastName())
+                .append("\n\t").append("  Age:").append(this.getAge())
+                .append("\n\t").append("  Gender:").append(this.getGender());
+        if ((this.getEmailRestricted() != null)&& (this.getEmailRestricted())) {
+            sb.append("  EmailAddress: #Confidential information#");
+        } else {
+            sb.append("\n\t").append("  EmailAddress:").append(this.getEmailAddress());
+        }
+        sb.append("\n\t").append("  IsEmailRestricted:").append(this.getEmailRestricted())
+                .append("\n\t").append("  Specialization:").append(this.getSpecialization())
+                .append("\n\t").append("  Years of experience:").append(this.getYearsofexp())
+                .append("\n\t").append("Students feedback marks: ");
+        if ((this.getList() != null) && (this.getList().size() <= 0)) {
+            sb.append("None");
+        } else {
+            for (Map.Entry entry : this.getList().entrySet()) {
+                sb.append("\n\t\t").append(entry.getKey()).append(": ").append(entry.getValue());
+            }
+        }
+        sb.append("\n}");
+        return sb.toString();
+
+    }
 }

@@ -13,6 +13,7 @@ public class ManagePerson {
         alex.setGender("Male");
         alex.setEmailAddress("caciuralex@gmail.com");
         alex.setEmailRestricted(FALSE);
-        alex.getInfo();
+//        alex.getInfo();
+        System.out.println(alex);
     }
 }

@@ -2,6 +2,7 @@ package alexc.preempsession;
 
 import alexc.student.Student;
 import alexc.trainer.Trainer;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,20 +47,41 @@ public class PreemploymentSession {
         String obj = "";
         for (Trainer trainer : trainerList) {
             obj = obj + trainer.getFirstName() + " " + trainer.getLastName() +
-                    ", Years of experience: " + trainer.getYearsofexp() +"\n";
+                    ", Years of experience: " + trainer.getYearsofexp() + "\n";
         }
         System.out.println(obj);
 
     }
 
-    public void getStudentList() {
+    public String getStudentList() {
         String obj = "";
         for (Student student : studentList) {
             obj = obj + student.getFirstName() + " " + student.getLastName() +
                     ", Interview Score:" + student.getInterviewScore() + "; Highest average mark: " +
-                    student.calculateAverageDisciplinesScore() +"\n";
+                    student.calculateAverageDisciplinesScore() + "\n";
         }
         System.out.println(obj);
+        return obj;
+    }
+
+    public String getStudentList(String delimitator) {
+        String obj = "";
+        for (Student student : studentList) {
+            obj = obj + student.getFirstName() + " " + student.getLastName() +
+                    ", Interview Score:" + student.getInterviewScore() + "; Highest average mark: " +
+                    student.calculateAverageDisciplinesScore() + delimitator;
+        }
+        return obj;
+    }
+
+    public String getTrainerList(String delimitator) {
+        String obj = "";
+        for (Trainer trainer : trainerList) {
+            obj = obj + trainer.getFirstName() + " " + trainer.getLastName() +
+                    ", Years of experience: " + trainer.getYearsofexp() +
+                    ", Average Feedback Score:" + trainer.calculateAverageFeedbackScore() + delimitator;
+        }
+        return obj;
     }
 
     public float getHighestAverageMark() {
@@ -103,6 +125,30 @@ public class PreemploymentSession {
         System.out.println("The best rated trainer is: " + getBestRatedTrainer());
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Preemployment session : \n").append("{").append("\n\t").append("  Year: ").append(this.getYear())
+                .append("\n\t").append("  Community: ").append(this.getCommunity())
+                .append("\n\t").append("  Type:").append(this.getType())
+                .append("\n\t").append("  Student list:");
+
+        if (this.getStudentList() == "") {
+            sb.append("None");
+        } else {
+            sb.append("\n\t\t").append(this.getStudentList("\n\t\t"));
+        }
+        sb.append("\n\t").append("  Trainer list:");
+        if (this.getTrainerList("\n\t\t") == "") {
+            sb.append("None");
+        } else {
+            sb.append("\n\t\t").append(this.getTrainerList("\n\t\t"));
+        }
+        sb.append("\n}");
+        return sb.toString();
+
+    }
+
     public static void main(String[] args) {
         PreemploymentSession pre = new PreemploymentSession(2019, "Automation", "Manual");
         Student student1 = new Student("Alex", "Caciur", Boolean.TRUE, 21);
@@ -111,8 +157,8 @@ public class PreemploymentSession {
         pre.addStudent(student2);
         student1.addDisciplineMark("Biologie", 10);
         student2.addDisciplineMark("Biologie", 9);
-        student1.addDisciplineMark("Biologie", 8);
-        student2.addDisciplineMark("Biologie", 4);
+        student1.addDisciplineMark("Chimie", 8);
+        student2.addDisciplineMark("Chimie", 4);
         student1.setGender("Male");
         student2.setGender("Female");
 
@@ -137,7 +183,8 @@ public class PreemploymentSession {
         trainer2.setList(9);
         pre.addTrainer(trainer1);
         pre.addTrainer(trainer2);
-        pre.getProgramDetails();
+//        pre.getProgramDetails();
+        System.out.println(pre);
     }
 }
 
