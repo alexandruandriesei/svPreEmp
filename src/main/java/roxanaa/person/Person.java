@@ -1,8 +1,5 @@
 package roxanaa.person;
 
-import com.sun.istack.internal.localization.NullLocalizable;
-import java.sql.SQLOutput;
-
 public class Person {
 
     protected String firstName;
