@@ -1,7 +1,11 @@
 package cosminac.person;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import cosminac.person.trainer.Trainer;
 import cosminac.students.Student;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ManagePerson {
 
@@ -26,6 +30,7 @@ public class ManagePerson {
         System.out.println(cosmina.calculateAverageDisciplinesScore());
 
 
+
         Trainer trainer1 = new Trainer("Alex", "Math", 6);
         Trainer trainer2 = new Trainer("Gabi", "Biology", 4);
         trainer1.showDetails();
@@ -35,6 +40,17 @@ public class ManagePerson {
         System.out.println(trainer1.getFeedbackMarks());
         trainer1.setYearsOfExperience(5);
 
+
+        ObjectMapper my_obj = new ObjectMapper();
+        try {
+            Student student = my_obj.readValue("student.json", Student.class);
+        }
+        catch (FileNotFoundException fe) {
+            fe.printStackTrace();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
         
 
     }
