@@ -45,4 +45,6 @@ public class Student extends Person {
     public void setDisciplineMarks(HashMap<String, Integer> disciplineMarks) {
         this.disciplineMarks = disciplineMarks;
     }
+
+
 }
