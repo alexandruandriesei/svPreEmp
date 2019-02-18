@@ -15,7 +15,7 @@ public class PreemploymentSession {
     public PreemploymentSession(int year, String community, String type) {
         this.year = year;
         this.community = community;
-        if (type.toUpperCase().equalsIgnoreCase("MANUAL") || type.toUpperCase().equalsIgnoreCase("AUTO")) {
+        if (type.equalsIgnoreCase("MANUAL") || type.equalsIgnoreCase("AUTO")) {
             this.type = type;
         } else {
             System.out.println("Type must be AUTO or MANUAL");

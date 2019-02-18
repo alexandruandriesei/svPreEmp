@@ -7,6 +7,8 @@ import java.util.Map;
 
 public class Student extends Person {
 
+
+
     private static String code;
     Boolean graduated;
     Integer interviewScore;
@@ -68,13 +70,13 @@ public class Student extends Person {
             int sum1 = (int) element.getValue();
             sum += (double) sum1;
 
-
         }
 
         return sum / (double) this.disciplineMarks.size();
 
 
     }
+
 
 
 }

@@ -8,13 +8,22 @@ public class Person {
     private String emailAddress;
     private Boolean isEmailRestricted;
 
+    public Person(){}
+
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age<18||age>100){
+            System.out.println("Varsta trebuie sa fie cuprinsa intre 18-100.");
+            throw new IllegalArgumentException("Varsta trebuie sa fie cuprinsa intre 18-100");
+             }
+        else if(this.age>age){
+            System.out.println("Varsta introdusa nu poate sa fie mai mica decat cea deja introdusa.");
+            throw new IllegalArgumentException("Varsta");}
+        else this.age = age;
     }
 
     public Boolean getEmailRestricted() {
@@ -73,7 +82,9 @@ public class Person {
     }
 
     public String getEmailAddress() {
-        if (getEmailRestricted()) {
+        if(getEmailRestricted()==null)
+            throw new NullPointerException("Nu si-a dat acordul!");
+        else if (getEmailRestricted()) {
             System.out.println("Email is restricted.");
             throw new IllegalAccessError();
         } else return emailAddress;
