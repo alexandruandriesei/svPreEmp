@@ -133,14 +133,11 @@ public class Person {
      * @param age
      */
     public void setAge(int age) {
-        try {
-            if (age <= 100 && age >= 0)
+            if (age <= 100 && age >= 18)
                 this.age = age;
             else
                 throw new IllegalArgumentException();
-        } catch (IllegalArgumentException e) {
-            System.out.println("Varsta trebuie sa fie intre 0 si 100 de ani.");
-        }
+
     }
 
     /**
@@ -218,13 +215,13 @@ public class Person {
     }
 
     public String printPersonDetails() {
-            return "Person{" +
-                    "firstName='" + firstName + '\'' +
-                    ", lastName='" + lastName + '\'' +
-                    ", age=" + age +
-                    ", gender='" + gender + '\'' +
-                    ", emailAddress='" + getEmailAddress() + '\'' +
-                    '}';
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", emailAddress='" + getEmailAddress() + '\'' +
+                '}';
 
 
     }
