@@ -112,7 +112,7 @@ public class PersonTest {
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void setTestAge_WithAgeBetween_ShouldThrowException() {
-        //Arrange
+        // Arrange
         Person person = new Person();
         //Act
         person.setAge(40);
