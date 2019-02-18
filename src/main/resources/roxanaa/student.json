@@ -1,0 +1,9 @@
+
+{ "firstName" : "Audrey",
+  "lastName" : "Hepburn",
+  "graduated" : true,
+  "interviewScore" : 10,
+  "age" : 23,
+  "emailAddress" : "audrey@email.com",
+  "isEmailRestricted" : false}
+
