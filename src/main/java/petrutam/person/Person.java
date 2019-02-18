@@ -20,6 +20,7 @@ public class Person {
     public String getFirstName() {
         return firstName;
     }
+
     public String getLastName() {
         return lastName;
     }
@@ -42,12 +43,19 @@ public class Person {
 
         } else {
             return emailAddress;
+
         }
     }
 
-
     public void setAge(int age) {
-        this.age = age;
+        if (age <= 100 && age >= 18)
+            if (age > this.age)
+                this.age = age;
+            else
+                throw new IllegalArgumentException();
+        else
+            throw new IllegalArgumentException();
+
     }
 
     public void setGender(char gender) {

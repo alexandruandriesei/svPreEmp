@@ -73,11 +73,17 @@ public class Student extends Person {
          }
          return sum;
      }
- */
+*/
     public Student(Boolean gradueted, int score) {
         this.gradueted = gradueted;
         this.score = score;
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "gradueted=" + gradueted +
+                ", score=" + score +
+                '}';
+    }
 }
