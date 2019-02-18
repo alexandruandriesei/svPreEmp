@@ -9,7 +9,7 @@ public class ManagePerson {
         Person alex = new Person("Alex", "Caciur");
         alex.setFirstName("Alex");
         alex.setLastName("Caciur");
-        alex.setAge(23);
+        alex.setAge(9);
         alex.setGender("Male");
         alex.setEmailAddress("caciuralex@gmail.com");
         alex.setEmailRestricted(FALSE);

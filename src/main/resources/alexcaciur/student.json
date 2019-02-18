@@ -1,0 +1,8 @@
+{"firstName": "John",
+  "lastName": "Wick",
+  "graduated": true,
+  "interviewScore": 10,
+  "age": 19,
+  "gender": "Male",
+  "emailAddress": "John@test.com"
+}

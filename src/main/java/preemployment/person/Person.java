@@ -7,6 +7,7 @@ public class Person {
     private int age;
     private String gender;
     private String emailAddress;
+    private Boolean isEmailRestricted;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
@@ -34,18 +35,15 @@ public class Person {
     }
 
     public void setAge(int age) {
-        try {
-            if (18 <= age && age <= 100) {
-                if (age >= this.age) {
-                    this.age = age;
-                } else {
-                    throw new IllegalArgumentException("Age cannot decrease");
-                }
+
+        if (18 > age || age > 100) {
+            throw new IllegalArgumentException("Age must be between 18 and 100");
             } else {
-                throw new IllegalArgumentException("Age must be between 18 and 100");
-            }
-        } catch (IllegalArgumentException i) {
-            System.out.println("Exception when setting age for Student " + this.firstName + " " + this.lastName + " ---------> " + i);
+                if (age <= this.age) {
+                    throw new IllegalArgumentException("Age cannot decrease");
+                } else {
+                    this.age = age;
+                }
         }
 
     }
@@ -59,7 +57,16 @@ public class Person {
     }
 
     public String getEmailAddress() {
-        return emailAddress;
+        if (isEmailRestricted == null) {
+            throw new NullPointerException("Vezi ca nu si-a dat inca acordul, nici ca da, nici ca nu!");
+        } else {
+            if (!isEmailRestricted) {
+                return emailAddress;
+
+            } else {
+                throw new IllegalArgumentException("\nDoes not want to display email");
+            }
+        }
     }
 
     public void setEmailAddress(String emailAddress) {
@@ -76,6 +83,14 @@ public class Person {
             throw new IllegalArgumentException("Invalid email Address ");
         }
 
+    }
+
+    public Boolean getEmailRestricted() {
+        return isEmailRestricted;
+    }
+
+    public void setEmailRestricted(Boolean emailRestricted) {
+        isEmailRestricted = emailRestricted;
     }
 
     public void printPersonalDetails() {
