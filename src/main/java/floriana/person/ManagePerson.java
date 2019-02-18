@@ -1,13 +1,18 @@
 package floriana.person;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import floriana.preemployment.Preemployment;
 import floriana.student.Student;
 import floriana.trainer.Trainer;
 
+import java.io.File;
+import java.io.IOException;
+
+
 
 public class ManagePerson {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Student s1 = new Student("Florian", "Anghele", true, 12);
         Student s2 = new Student("Gigi", "Lent", true, 18);
@@ -55,6 +60,17 @@ public class ManagePerson {
         p1.highestAverageScoreOfStudents();
         p1.highestAverageScoreOfTrainers();
         p1.setType("AUTO");
+
+
+        ObjectMapper objMapper = new ObjectMapper();
+/*
+        objMapper.writeValue(new File("src/myObj.json"), p1);
+        String myJsonAsStrnig =objMapper.writeValueAsString(p1);
+  */
+
+        //Preemployment myObj = objMapper.readValue("myObj.json", Preemployment.class);
+
+
     }
 
 }
