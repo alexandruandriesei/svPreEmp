@@ -18,6 +18,10 @@ public class Student extends Person {
         this.interviewScore = interviewScore;
     }
 
+    public Student(){
+
+    }
+
     public boolean isGraduated() {
         return graduated;
     }
@@ -46,19 +50,6 @@ public class Student extends Person {
         this.disciplineMarks.put(discipline, marks);
     }
 
-    public static void main(String[] args) {
-        Student adrian = new Student("Adrian", "Gramisteanu", true, 8);
-        System.out.println(adrian.graduated);
-        System.out.println(adrian.interviewScore);
-        adrian.addDisciplineMarks("Mate", 321);
-        adrian.addDisciplineMarks("Info", 231);
-        adrian.addDisciplineMarks("Japoneza", 132);
-        adrian.addDisciplineMarks("Test", 99);
-        System.out.println("\n" + adrian.getDisciplineMarks());
-        System.out.println(adrian.calculateAverageDisciplinesScore());
-    }
-
-
     public float calculateAverageDisciplinesScore() {
         float average = 0;
         for (Map.Entry element : disciplineMarks.entrySet()) {
@@ -82,6 +73,18 @@ public class Student extends Person {
                 ", Interview Score: " + "\'" + interviewScore  + "\'" +
                 ", Media finala: " + calculateAverageDisciplinesScore() +
                 '}' + "\n";
+    }
+
+    public static void main(String[] args) {
+        Student adrian = new Student("Adrian", "Gramisteanu", true, 8);
+        System.out.println(adrian.graduated);
+        System.out.println(adrian.interviewScore);
+        adrian.addDisciplineMarks("Mate", 321);
+        adrian.addDisciplineMarks("Info", 231);
+        adrian.addDisciplineMarks("Japoneza", 132);
+        adrian.addDisciplineMarks("Test", 99);
+        System.out.println("\n" + adrian.getDisciplineMarks());
+        System.out.println(adrian.calculateAverageDisciplinesScore());
     }
 
 }

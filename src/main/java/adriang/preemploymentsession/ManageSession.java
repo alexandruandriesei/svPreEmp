@@ -2,11 +2,17 @@ package adriang.preemploymentsession;
 
 import adriang.student.Student;
 import adriang.trainer.Trainer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
 
 public class ManageSession {
 
     public static void main(String[] args) {
-
+        /*
         // Default Student
         Student adrian = new Student("Adrian", "Gramisteanu", true, 8);
         adrian.addDisciplineMarks("Mate", 4);
@@ -51,8 +57,34 @@ public class ManageSession {
 
         System.out.println(list.getTrainerList());
 
+        //Student xulescu = objMapper.readValue()
+
+
+
+        Student stud = new Student();
+        stud.setFirstName("Mihai");
+        stud.setLastName("Vasile");
+        stud.setAge(22);
+        stud.setGender('M');
+        stud.setIsEmailRestricted(true);
+        stud.setEmailAddress("vasile.john@google.com");
+        stud.setGraduated(true);
+        stud.setInterviewScore(10);
+        //stud.addDisciplineMarks("QA",10);
+        */
+
+        ObjectMapper myObj = new ObjectMapper();
+        try {
+            Student student = myObj.readValue(new File("src/student.json"), Student.class);
+            System.out.println(student.getFirstName());
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 
 }
-

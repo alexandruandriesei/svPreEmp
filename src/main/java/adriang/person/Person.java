@@ -6,8 +6,8 @@ public class Person {
     private String lastName;
     private int age;
     private char gender;
-    private String emailAddress;
     private Boolean isEmailRestricted;
+    private String emailAddress;
 
     public Person() {
     }
@@ -19,6 +19,19 @@ public class Person {
         this.lastName = lastName;
 
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setIsEmailRestricted(Boolean emailRestricted) {
+        isEmailRestricted = emailRestricted;
+    }
+
 
     public String getFirstName() {
         return firstName;
@@ -32,20 +45,33 @@ public class Person {
         return age;
     }
 
+
     public char getGender() {
         return gender;
     }
 
     public String getEmailAddress() {
-        if (isEmailRestricted) {
-            throw new IllegalArgumentException("\nInvalid");
+        if (isEmailRestricted == null) {
+            throw new NullPointerException("Nu si-a dat acordul nici ca da nici ca nu.");
         } else {
-            return emailAddress;
+            if (!isEmailRestricted) {
+                return emailAddress;
+            } else {
+                throw new IllegalArgumentException("\nInvalid");
+            }
         }
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age < 18 || age > 100) {
+            throw new IndexOutOfBoundsException("Valoarea depaseste 99 sau este mai mica de 18.");
+        } else {
+            if (age == 18 || age == 100) {
+                throw new IndexOutOfBoundsException("Valoarea este setata in limita.");
+            } else {
+                this.age = age;
+            }
+        }
     }
 
     public void setGender(char gender) {
@@ -57,10 +83,15 @@ public class Person {
     }
 
     public void setEmailAddress(String emailAddress) {
-        if (emailAddress.matches(regex))
-            this.emailAddress = emailAddress;
-        else {
+        if (!emailAddress.matches(regex)) {
             throw new IllegalArgumentException("Invalid email Adress");
+        } else {
+
+            if (isEmailRestricted == null) {
+                throw new NullPointerException("Email restricted value is null.");
+            } else {
+                this.emailAddress = emailAddress;
+            }
         }
     }
 
@@ -68,7 +99,7 @@ public class Person {
         return isEmailRestricted;
     }
 
-    public void setEmailRestricted(boolean emailRestricted) {
+    public void setIsEmailRestricted(boolean emailRestricted) {
         isEmailRestricted = emailRestricted;
     }
 
