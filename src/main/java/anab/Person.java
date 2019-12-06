@@ -1,20 +1,22 @@
+package anab;
+
 public class Person {
 
-  String FirstName;
+  String firstName;
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
     public void setFirstName(String newFirstName) {
-        FirstName = newFirstName;
+        firstName = newFirstName;
     }
 
 
-    String LastName;
+    String lastName;
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
     public void setLastName(String newLastName) {
-        LastName = newLastName;
+        lastName = newLastName;
     }
 
 
