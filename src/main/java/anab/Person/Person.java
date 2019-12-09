@@ -1,4 +1,4 @@
-package anab;
+package anab.Person;
 
 public class Person {
 
