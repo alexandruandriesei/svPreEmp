@@ -7,20 +7,25 @@ public class ManagePerson {
     }
 
     public static void main(String[] args) {
-        Person personPerson = new Person("Ion", "Popescu", "Male", 15, "vasilica@gmail.com", true);
+        Person personPerson = new Person("Ion", "Popescu", "Male", 15, "vasilica@gmail.com", false);
 
         System.out.println("First Name:\t" + personPerson.getFirstName());
         System.out.println("Last Name:\t" + personPerson.getLastName());
+        System.out.println();
         String name = "Buru";
         printeazaText("Ana" + name);
+        System.out.println();
 
-        personPerson.setGender("testare");
+        personPerson.setGender("Male");
         System.out.println("Gender type: " + personPerson.getGender());
+        System.out.println();
 
         String newEmailAddress = "myEmail@google.com";
         personPerson.setEmailAddress(newEmailAddress);
+        System.out.println();
 
         personPerson.printPersonDetails();
+        System.out.println();
 
       //  personPerson.setEmailRestricted();
         personPerson.getIsEmailRestricted();
