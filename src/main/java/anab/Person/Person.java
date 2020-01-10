@@ -16,47 +16,45 @@ public class Person {
         this.gender = gender;
         this.age = age;
         this.emailAddress = emailAddress;
-
     }
 
+    public void printPersonDetails() {
+        System.out.println("Here are the person details you've asked: ");
+        System.out.println("Name:" + firstName);
+        System.out.println("LastName:" + lastName);
+        System.out.println("Gender:" + gender);
+        System.out.println("Age:" + age);
+        System.out.println("Email address:" + emailAddress);
+    }
 
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String newFirstName) {
         firstName = newFirstName;
     }
 
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String newLastName) {
         lastName = newLastName;
     }
 
-
     public Integer getAge() {
         return age;
     }
-
     public void setAge(Integer newAge) {
         age = newAge;
     }
 
-
     public String getGender() {
         return gender;
     }
-
     public void setGender(String newGender) {
 
-        //4. Add validation to setGender(String gender) allow setting the gender as “Male”, “Female“, “Other”.
         if ((newGender == "Male") || (newGender == "Female") || (newGender == "Other")) {
             gender = newGender; //assign value given checked by if conditions
-            //  System.out.println("Gender value is: " + gender); - not needed since we only wanna assign the value and display it using main method
 
         } else {
             if ((newGender == null) || (newGender.length() == 0)) {
