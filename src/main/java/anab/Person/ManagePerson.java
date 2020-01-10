@@ -7,7 +7,7 @@ public class ManagePerson {
     }
 
     public static void main(String[] args) {
-        Person personPerson = new Person("Ion", "Popescu", "Gender", 15, "EmailAddress");// create an object of Person class
+        Person personPerson = new Person("Ion", "Popescu", "Male", 15, "vasilica@gmail.com", true);
 
         System.out.println("First Name:\t" + personPerson.getFirstName());
         System.out.println("Last Name:\t" + personPerson.getLastName());
@@ -19,8 +19,12 @@ public class ManagePerson {
 
         String newEmailAddress = "myEmail@google.com";
         personPerson.setEmailAddress(newEmailAddress);
+
+        personPerson.printPersonDetails();
+
+      //  personPerson.setEmailRestricted();
+        personPerson.getIsEmailRestricted();
+
     }
-
 }
-
 

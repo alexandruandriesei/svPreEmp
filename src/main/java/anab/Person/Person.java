@@ -9,27 +9,30 @@ public class Person {
     private String gender;
     private int age;
     private String emailAddress;
+    private boolean isEmailRestricted;
 
-    public Person(String firstName, String lastName, String gender, int age, String emailAddress) {
+    public Person(String firstName, String lastName, String gender, int age, String emailAddress, boolean isEmailRestricted) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
         this.emailAddress = emailAddress;
+        this.isEmailRestricted = true;
     }
 
     public void printPersonDetails() {
         System.out.println("Here are the person details you've asked: ");
         System.out.println("Name:" + firstName);
-        System.out.println("LastName:" + lastName);
-        System.out.println("Gender:" + gender);
+        System.out.println("Last name:" + lastName);
+        System.out.println("Gender" + gender);
         System.out.println("Age:" + age);
-        System.out.println("Email address:" + emailAddress);
+        System.out.println("Email:" + emailAddress);
     }
 
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String newFirstName) {
         firstName = newFirstName;
     }
@@ -37,6 +40,7 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String newLastName) {
         lastName = newLastName;
     }
@@ -44,6 +48,7 @@ public class Person {
     public Integer getAge() {
         return age;
     }
+
     public void setAge(Integer newAge) {
         age = newAge;
     }
@@ -51,6 +56,7 @@ public class Person {
     public String getGender() {
         return gender;
     }
+
     public void setGender(String newGender) {
 
         if ((newGender == "Male") || (newGender == "Female") || (newGender == "Other")) {
@@ -64,8 +70,6 @@ public class Person {
 
             }
         }
-
-
     }
 
     public String getEmailAddress() {
@@ -78,6 +82,19 @@ public class Person {
             System.out.println("Correct Email address");
         } else {
             System.out.println("Email invalid!!!");
+        }
+    }
+
+    public boolean getIsEmailRestricted() {
+        return isEmailRestricted;
+    }
+
+    public boolean setEmailRestricted(boolean isEmailRestricted) {
+        if (isEmailRestricted == true) {
+            System.out.println("Email information is restricted for this customer");
+            return true;
+        } else {
+           return false;
         }
     }
 }
