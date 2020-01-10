@@ -12,8 +12,8 @@ public class ManagePerson {
         System.out.println("First Name:\t" + personPerson.getFirstName());
         System.out.println("Last Name:\t" + personPerson.getLastName());
         System.out.println();
-        String name = "Buru";
-        printeazaText("Ana" + name);
+        String name = "Buruiana";
+        printeazaText("Ana " + name+".");
         System.out.println();
 
         personPerson.setGender("Male");
@@ -27,7 +27,6 @@ public class ManagePerson {
         personPerson.printPersonDetails();
         System.out.println();
 
-      //  personPerson.setEmailRestricted();
         personPerson.getIsEmailRestricted();
 
     }

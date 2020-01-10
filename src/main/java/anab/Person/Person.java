@@ -1,6 +1,4 @@
 package anab.Person;
-//import java.util.*;
-//import java.util.Random;
 
 public class Person {
 
