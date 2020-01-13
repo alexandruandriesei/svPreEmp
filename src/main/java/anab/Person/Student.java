@@ -39,6 +39,4 @@ public class Student extends Person {
         this.interviewScore = interviewScore;
 
     }
-
-
 }
