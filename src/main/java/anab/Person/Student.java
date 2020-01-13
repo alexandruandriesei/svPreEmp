@@ -1,4 +1,44 @@
 package anab.Person;
 
-public class Student {
+import java.util.HashMap;
+import java.util.Map;
+
+public class Student extends Person {
+
+    private boolean graduated;
+    private static String code;
+    private int interviewScore;
+    private Map<String, Integer> disciplineMarks = new HashMap<>();
+
+    public void setGraduated(Boolean newGraduated) {
+        graduated = newGraduated;
+
+    }
+
+    public void setCode(String newCode) {
+        code = newCode;
+    }
+
+    public void setInterviewScore(int newInterviewScore) {
+        interviewScore = newInterviewScore;
+    }
+
+    public void setDisciplineMarks(Map<String, Integer> disciplineMarks) {
+        this.disciplineMarks = disciplineMarks;
+    }
+
+    public void addDisciplineMark(String discipline, int nota) {
+        this.disciplineMarks.put(discipline, nota);
+    }
+
+    public Student(String firstName, String lastName, String gender, int age, String emailAddress, boolean isEmailRestricted, boolean graduated, String code, int interviewScore, Map<String, Integer> disciplineMarks) {
+        super(firstName, lastName, gender, age, emailAddress, isEmailRestricted);
+        this.code = code;
+        this.graduated = graduated;
+        this.disciplineMarks = disciplineMarks;
+        this.interviewScore = interviewScore;
+
+    }
+
+
 }
