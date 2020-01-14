@@ -1,7 +1,9 @@
 package anab.Person;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class Student extends Person {
 
@@ -37,6 +39,18 @@ public class Student extends Person {
         this.graduated = graduated;
         this.disciplineMarks = disciplineMarks;
         this.interviewScore = interviewScore;
+    }
 
+    public static double average(int sum, Map<String, Integer> map) {
+        Set set = map.entrySet();
+        Iterator itr = set.iterator();
+        sum = 0;
+        while (itr.hasNext()) {
+            Map.Entry entry = (Map.Entry) itr.next();
+            System.out.println(entry.getKey() + " " + entry.getValue());
+            sum = sum + (int) entry.getValue();
+        }
+        double average = (double) sum / map.size();
+        return average;
     }
 }

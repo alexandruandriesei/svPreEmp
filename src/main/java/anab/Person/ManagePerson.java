@@ -1,10 +1,8 @@
 package anab.Person;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
+
+import static anab.Person.Student.average;
 
 public class ManagePerson {
     static void printeazaText(String name) {
@@ -46,34 +44,16 @@ public class ManagePerson {
         map.remove("civica");
         map.replace("geografie", 3);
 
-        int note1 = map.get("geografie");
-
         try {
             int note2 = map.get("civica");
 
         } catch (NullPointerException e) {
             System.out.println("it's just an exception named NullPointerException ");
         }
-
-        int note3 = map.get("desen");
-        System.out.println("Geografie = " + note1);
-        System.out.println("Desen = " + note3);
-
+        int sum = 0;
+        System.out.println("Geografie = " + map.get("Geografie"));
+        System.out.println("Desen = " + map.get("Desen"));
         System.out.println("My list is: " + map);
-
-        Iterator itr = map.entrySet().iterator();
-        double[] list = {8, 6, 3, 8, 10, 9, 7};
-        double sum = 0;
-       while (itr.hasNext()) {
-            System.out.println(itr.next() + " ");
-              }
-
-        for (int i = 0; i < map.size(); i++) {
-                sum = sum + list[i];
-            }
-            double average= sum/list.length;
-            System.out.println("Average is= "+average);
-
-
+        System.out.println("Average is= " + average(sum,map));
     }
 }
