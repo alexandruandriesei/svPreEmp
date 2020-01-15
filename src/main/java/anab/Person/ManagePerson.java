@@ -2,8 +2,6 @@ package anab.Person;
 
 import java.util.*;
 
-import static anab.Person.Student.average;
-
 public class ManagePerson {
     static void printeazaText(String name) {
         System.out.println("Hello " + name + ".");
@@ -18,7 +16,7 @@ public class ManagePerson {
         String name = "Buruiana";
         printeazaText("Ana " + name);
         System.out.println();
-        personPerson.setGender("Male");
+        personPerson.setGender("Female");
         System.out.println("Gender type: " + personPerson.getGender());
         System.out.println();
         String newEmailAddress = "myEmail@google.com";
@@ -38,22 +36,38 @@ public class ManagePerson {
 
         Student student = new Student("Email", "Popescu", "Male", 21, "email.pop@yahoo.com", false, true, "12", 98, map);
 
-        System.out.println("Check discipline marks: ");
+        System.out.println("Check updated discipline marks: ");
         student.addDisciplineMark("biologie", 8);
+        System.out.println("biologie = " + map.get("biologie"));
         student.addDisciplineMark("informatica", 9);
+        System.out.println("informatica = " + map.get("informatica"));
         map.remove("civica");
-        map.replace("geografie", 3);
-
+        map.replace("geografie", 8);
+        System.out.println("Geografie = " + map.get("geografie"));
+        System.out.println("Desen = " + map.get("desen"));
+        System.out.println("My list is: " + map);
         try {
-            int note2 = map.get("civica");
+            int note = map.get("civica");
 
         } catch (NullPointerException e) {
             System.out.println("it's just an exception named NullPointerException ");
         }
-        int sum = 0;
-        System.out.println("Geografie = " + map.get("Geografie"));
-        System.out.println("Desen = " + map.get("Desen"));
-        System.out.println("My list is: " + map);
         System.out.println("Average is= " + student.average());
+
+        Map<String, Integer> feedbackMarks = new HashMap<String, Integer>();
+        feedbackMarks.put("Matematica", 4);
+        feedbackMarks.put("Romana", 9);
+        feedbackMarks.put("Informatica", 6);
+
+        Trainer trainer = new Trainer("Silvia", "Pompilievici", "Female", 45, "silvia.tr@yahoo.com", false, "Algebra", 4, feedbackMarks);
+        System.out.println("Lista de feedback: " + feedbackMarks);
+        trainer.setExperience("Matematica", 3);
+        trainer.setExperience("Romana", 5);
+        trainer.setExperience("Informatica", 6);
+      /*  trainer.addExperience(4);
+        trainer.getSpecialization();
+        trainer.setSpecialization("Informatica");
+
+       */
     }
 }
