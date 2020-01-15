@@ -54,6 +54,6 @@ public class ManagePerson {
         System.out.println("Geografie = " + map.get("Geografie"));
         System.out.println("Desen = " + map.get("Desen"));
         System.out.println("My list is: " + map);
-        System.out.println("Average is= " + average(sum,map));
+        System.out.println("Average is= " + student.average());
     }
 }

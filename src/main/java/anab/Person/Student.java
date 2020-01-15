@@ -41,16 +41,16 @@ public class Student extends Person {
         this.interviewScore = interviewScore;
     }
 
-    public static double average(int sum, Map<String, Integer> map) {
-        Set set = map.entrySet();
+    public double average() {
+        Set set = disciplineMarks.entrySet();
         Iterator itr = set.iterator();
-        sum = 0;
+        int sum = 0;
         while (itr.hasNext()) {
             Map.Entry entry = (Map.Entry) itr.next();
             System.out.println(entry.getKey() + " " + entry.getValue());
             sum = sum + (int) entry.getValue();
         }
-        double average = (double) sum / map.size();
-        return average;
+        double avg = (double) sum / disciplineMarks.size();
+        return avg;
     }
 }
