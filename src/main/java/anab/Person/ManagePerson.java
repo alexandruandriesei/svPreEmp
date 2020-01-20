@@ -12,18 +12,13 @@ public class ManagePerson {
 
         System.out.println("First Name:\t" + personPerson.getFirstName());
         System.out.println("Last Name:\t" + personPerson.getLastName());
-        System.out.println();
         String name = "Buruiana";
         printeazaText("Ana " + name);
-        System.out.println();
         personPerson.setGender("Female");
         System.out.println("Gender type: " + personPerson.getGender());
-        System.out.println();
         String newEmailAddress = "myEmail@google.com";
         personPerson.setEmailAddress(newEmailAddress);
-        System.out.println();
         personPerson.printPersonDetails();
-        System.out.println();
         personPerson.getIsEmailRestricted();
 
         Map<String, Integer> map = new HashMap<String, Integer>();
@@ -34,6 +29,7 @@ public class ManagePerson {
         map.put("muzica", 7);
         map.put("civica", 10);
 
+        System.out.println("--------------------------------------------------------------------------------");
         Student student = new Student("Email", "Popescu", "Male", 21, "email.pop@yahoo.com", false, true, "12", 98, map);
 
         System.out.println("Check updated discipline marks: ");
@@ -53,21 +49,25 @@ public class ManagePerson {
             System.out.println("it's just an exception named NullPointerException ");
         }
         System.out.println("Average is= " + student.average());
-
+        System.out.println("--------------------------------------------------------------------------------");
         Map<String, Integer> feedbackMarks = new HashMap<String, Integer>();
-        feedbackMarks.put("Matematica", 4);
-        feedbackMarks.put("Romana", 9);
-        feedbackMarks.put("Informatica", 6);
 
-        Trainer trainer = new Trainer("Silvia", "Pompilievici", "Female", 45, "silvia.tr@yahoo.com", false, "Algebra", 4, feedbackMarks);
-        System.out.println("Lista de feedback: " + feedbackMarks);
-        trainer.setExperience("Matematica", 3);
-        trainer.setExperience("Romana", 5);
-        trainer.setExperience("Informatica", 6);
-      /*  trainer.addExperience(4);
-        trainer.getSpecialization();
-        trainer.setSpecialization("Informatica");
+        Trainer trainer = new Trainer("Silvia ", "Pompilievici ", "Female", 45, "silvia.tr@yahoo.com", false, "Algebra", 4, feedbackMarks);
+        System.out.println(trainer.getFirstName() + trainer.getLastName() + "trainer " + trainer.getSpecialization() + " - experienta: " + trainer.getExperience() + " ani");
+        trainer.setSpecialization("Matematica");
 
-       */
+        trainer.getExperience();
+        System.out.println("Added experience for trainer "+trainer.getLastName() +" "+ trainer.getExperience());
+
+        trainer.addExperience("Matematica", 8);
+        trainer.getExperience();
+
+        //    @Override
+        trainer.addFeedbackMark(10, "Student 1");
+        trainer.addFeedbackMark(10, " ");
+        trainer.addFeedbackMark(5, "Pompilievici");
+        trainer.addFeedbackMark(3, "Chiriac");
+
+       trainer.getFeedbackMarks();
     }
 }
