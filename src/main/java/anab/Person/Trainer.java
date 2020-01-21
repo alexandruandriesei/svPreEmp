@@ -1,14 +1,16 @@
 package anab.Person;
 
+import java.nio.MappedByteBuffer;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class Trainer extends Person {
     private String specialization;
     private int experienceYears;
     private Map<String, Integer> feedbackMarks = new HashMap<>();
 
-    //constructor explicit -mosteneste Person=> super(param1, param2, param3,...)
     public Trainer(String firstName, String lastName, String gender, int age, String emailAddress, boolean isEmailRestricted, String specialization, int experienceYears, Map<String, Integer> feedbackMarks) {
         super(firstName, lastName, gender, age, emailAddress, isEmailRestricted);
         this.specialization = specialization;
@@ -32,35 +34,72 @@ public class Trainer extends Person {
     }
 
     //Add years of experience for a trainer
-    public void addExperience(String specialization, int experienceYears) {
-        this.specialization = specialization;
-        this.experienceYears = experienceYears;
-
+    public void addExperience(String spec, int expYears) {
+        specialization = spec;
+        experienceYears = expYears;
     }
 
-    public void setExperienceYears(int years, int existingExp) {
-        if (years != 0 && years > 0 && years >= existingExp) {
+    public int setExperienceYears(int years) {
+        if (years != 0 && years > 0 && years >= this.experienceYears) {
             years = getExperience() + years;
-            System.out.println(years + " years of experience on " + this.specialization);
+            System.out.println("Trainer has " + years + " years of experience on " + this.specialization);
+
         } else {
             System.out.println("Add valid value for years of experience= ");
         }
+        return years;
     }
 
-    public void addFeedbackMark(int feedback, String name) {
-        if (feedback <= 0 || feedback > 10) {
-            if (name == " ") {
-                name = "Anonymous Student";
-                //     }else{
-                //   System.out.println("Irrelevant feedback");
-                //  }
-            } else {
-                System.out.println("Feedback note:" + this.feedbackMarks.put(name, feedback));
-            }
+    public void addFeedbackMark(int feedback) {
+        if (feedback > 0 && feedback <= 10) {
+            System.out.println("Student: anonymous, feedback note= " + feedback + ",specializ =  " + this.specialization);
+        } else {
+            System.out.println("Give a feedback mark from 0 to 10 ");
+        }
+    }
+
+    //Overloading method
+    public void addFeedbackMark(String name, int feedback) {
+        if (!name.isEmpty() && (feedback > 0 && feedback <= 10)) {
+            System.out.println("Student: " + name + ", feedback note= " + feedback + ",specializ =  " + this.specialization);
+        } else {
+            System.out.println("Give a feedback mark from 0 to 10 ");
+        }
+        this.feedbackMarks.put(name, feedback);
+    }
+
+    public void printFeedbackMarks() {
+        Map<String, Integer> feedbackMarks = new HashMap<String, Integer>();
+        Set set = feedbackMarks.entrySet();
+        Iterator itr = set.iterator();
+        while (itr.hasNext()) {
+            Map.Entry entry = (Map.Entry) itr.next();
+            System.out.println("Test print printFeedbackMarks: " + entry.getKey() + " " + entry.getValue());
         }
     }
 
     public Map<String, Integer> getFeedbackMarks() {
         return this.feedbackMarks;
+    }
+
+    @Override
+    public void printPersonDetails() {
+        super.printPersonDetails();
+        System.out.println("Specialization: " + specialization);
+        //  System.out.println("Experienced years: " + experienceYears);
+        System.out.println("Trainer feedback marks received = " + feedbackMarks);
+    }
+
+    public double averageFeedback() {
+        Map<String, Integer> feedbackMarks1 = new HashMap<String, Integer>();
+        int sum = 0;
+        Set set = feedbackMarks.entrySet();
+        Iterator itr = set.iterator();
+        while (itr.hasNext()) {
+            Map.Entry entry = (Map.Entry) itr.next();
+            sum = sum + (int) entry.getValue();
+        }
+        double avg = (double) sum / feedbackMarks.size();
+        return avg;
     }
 }
