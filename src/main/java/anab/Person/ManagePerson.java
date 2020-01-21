@@ -9,18 +9,17 @@ public class ManagePerson {
 
     public static void main(String[] args) {
         Person personPerson = new Person("Ion", "Popescu", "Male", 15, "vasilica@gmail.com", false);
-
         System.out.println("First Name:\t" + personPerson.getFirstName());
         System.out.println("Last Name:\t" + personPerson.getLastName());
         String name = "Buruiana";
         printeazaText("Ana " + name);
-        personPerson.setGender("Female");
+        //  personPerson.setGender("Female");
         System.out.println("Gender type: " + personPerson.getGender());
-        String newEmailAddress = "myEmail@google.com";
+        String newEmailAddress = "myemail@google.com";
         personPerson.setEmailAddress(newEmailAddress);
+        personPerson.getEmailAddress();
         personPerson.printPersonDetails();
         personPerson.getIsEmailRestricted();
-
         Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("romana", 6);
         map.put("matematica", 8);
@@ -28,10 +27,8 @@ public class ManagePerson {
         map.put("geografie", 9);
         map.put("muzica", 7);
         map.put("civica", 10);
-
         System.out.println("--------------------------------------------------------------------------------");
-        Student student = new Student("Email", "Popescu", "Male", 21, "email.pop@yahoo.com", false, true, "12", 98, map);
-
+        Student student = new Student("Emil", "Popescu", "Male", 21, "email.pop@yahoo.com", false, true, "12", 98, map);
         System.out.println("Check updated discipline marks: ");
         student.addDisciplineMark("biologie", 8);
         System.out.println("biologie = " + map.get("biologie"));
@@ -51,23 +48,51 @@ public class ManagePerson {
         System.out.println("Average is= " + student.average());
         System.out.println("--------------------------------------------------------------------------------");
         Map<String, Integer> feedbackMarks = new HashMap<String, Integer>();
-
         Trainer trainer = new Trainer("Silvia ", "Pompilievici ", "Female", 45, "silvia.tr@yahoo.com", false, "Algebra", 4, feedbackMarks);
-        System.out.println(trainer.getFirstName() + trainer.getLastName() + "trainer " + trainer.getSpecialization() + " - experienta: " + trainer.getExperience() + " ani");
+        System.out.println(trainer.getFirstName() + trainer.getLastName() + "trainer " + trainer.getSpecialization() + " - actual experience: " + trainer.getExperience() + " ani");
         trainer.setSpecialization("Matematica");
-
-        trainer.getExperience();
-        System.out.println("Added experience for trainer "+trainer.getLastName() +" "+ trainer.getExperience());
-
-        trainer.addExperience("Matematica", 8);
-        trainer.getExperience();
-
-        //    @Override
-        trainer.addFeedbackMark(10, "Student 1");
-        trainer.addFeedbackMark(10, " ");
-        trainer.addFeedbackMark(5, "Pompilievici");
-        trainer.addFeedbackMark(3, "Chiriac");
-
-       trainer.getFeedbackMarks();
+        System.out.println("----------------------------------------------------------------------------------");
+        // int y= trainer.setExperienceYears(10);
+        System.out.println("New experience added for trainer " + trainer.getLastName() + " = " + trainer.getExperience() + " years");
+        System.out.println("Total experienced years= " + (trainer.setExperienceYears(10) + trainer.getExperience()));
+        System.out.println("----------------------------------------------------------------------------------");
+        trainer.printPersonDetails();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Feedback provided by students for this trainer: ");
+        feedbackMarks.put("Ionica", 8);
+        feedbackMarks.put("None", 2);
+        feedbackMarks.put("Fanel", 10);
+        feedbackMarks.put("Vasile", 7);
+        trainer.getFeedbackMarks();
+        trainer.printPersonDetails();
+        System.out.println("Average feedback for " + trainer.getLastName() + "= " + trainer.averageFeedback());
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>....1......>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        Map<String, Integer> feedbackMarks1 = new HashMap<String, Integer>();
+        Trainer trainer1 = new Trainer("Eugenius ", "Smartus ", "Male", 30, "eug.Sm@domain.com", false, "Istorie", 5, feedbackMarks1);
+        System.out.println(trainer1.getFirstName() + trainer1.getLastName() + "trainer " + trainer1.getSpecialization() + " - actual experience: " + trainer1.getExperience() + " ani");
+        System.out.println("New experience added for trainer " + trainer1.getLastName() + " = " + trainer1.getExperience() + " years");
+        System.out.println("Total experienced years= " + (trainer1.setExperienceYears(10) + trainer1.getExperience()));
+        trainer1.setSpecialization("Istorie");
+        feedbackMarks1.put("Ionica", 3);
+        feedbackMarks1.put("None", 3);
+        feedbackMarks1.put("Fanel", 3);
+        feedbackMarks1.put("Vasile", 3);
+        trainer1.getFeedbackMarks();
+        trainer1.printPersonDetails();
+        System.out.println("Average feedback for " + trainer1.getLastName() + "= " + trainer1.averageFeedback());
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>....2......>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        Map<String, Integer> feedbackMarks2 = new HashMap<String, Integer>();
+        Trainer trainer2 = new Trainer("George ", "Thomas ", "GenderFluid", 50, "smileyDude@fun.com", false, "Engleza", 12, feedbackMarks2);
+        System.out.println(trainer2.getFirstName() + trainer2.getLastName() + "trainer " + trainer2.getSpecialization() + " - actual experience: " + trainer2.getExperience() + " ani");
+        System.out.println("New experience added for trainer " + trainer2.getLastName() + " = " + trainer2.getExperience() + " years");
+        System.out.println("Total experienced years= " + (trainer2.setExperienceYears(10) + trainer2.getExperience()));
+        trainer1.setSpecialization("Engleza");
+        feedbackMarks2.put("Ionica", 2);
+        feedbackMarks2.put("None", 10);
+        feedbackMarks2.put("Fanel", 4);
+        feedbackMarks2.put("Vasile", 4);
+        trainer2.getFeedbackMarks();
+        trainer2.printPersonDetails();
+        System.out.println("Average feedback for " + trainer2.getLastName() + "= " + trainer2.averageFeedback());
     }
 }
