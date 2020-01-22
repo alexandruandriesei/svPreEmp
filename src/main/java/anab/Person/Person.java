@@ -1,7 +1,6 @@
 package anab.Person;
 
 public class Person {
-
     private String firstName;
     private String lastName;
     private String gender;
@@ -15,7 +14,7 @@ public class Person {
         this.gender = gender;
         this.age = age;
         this.emailAddress = emailAddress;
-        this.isEmailRestricted = false;
+        this.isEmailRestricted = isEmailRestricted;
     }
 
     public void printPersonDetails() {
@@ -56,7 +55,6 @@ public class Person {
     }
 
     public void setGender(String newGender) {
-
         if ((newGender == "Male") || (newGender == "Female") || (newGender == "Other")) {
             gender = newGender; //assign value given checked by if conditions
             System.out.println("Gender type has a valid format given");
@@ -65,7 +63,6 @@ public class Person {
                 System.out.println("Gender field is empty");
             } else {
                 System.out.println("err: Gender type needs a valid value. Please re-enter one(Male, Female, Other): " + newGender);
-
             }
         }
     }
@@ -78,7 +75,6 @@ public class Person {
         if (newEmailAddress.matches("(?:[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:\t[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")) {
             System.out.println("Correct Email address:");
             emailAddress = newEmailAddress;
-
         } else {
             System.out.println("Email invalid!!!");
         }
@@ -93,10 +89,7 @@ public class Person {
             System.out.println("Email information is restricted for this customer");
             return true;
         } else {
-           return false;
+            return false;
         }
     }
 }
-
-
-
