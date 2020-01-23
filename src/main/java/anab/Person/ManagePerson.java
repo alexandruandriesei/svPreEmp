@@ -51,7 +51,6 @@ public class ManagePerson {
         System.out.println(trainer.getFirstName() + trainer.getLastName() + "trainer " + trainer.getSpecialization() + " - actual experience: " + trainer.getExperienceYears() + " ani");
         trainer.setSpecialization("Matematica");
         System.out.println("----------------------------------------------------------------------------------");
-        // int y= trainer.setExperienceYears(10);
         System.out.println("New experience added for trainer " + trainer.getLastName() + " = " + trainer.getExperienceYears() + " years");
         System.out.println("Total experienced years= " + trainer.getExperienceYears());
         System.out.println("----------------------------------------------------------------------------------");
@@ -67,11 +66,6 @@ public class ManagePerson {
         trainer.addFeedbackMark(7);
         trainer.addFeedbackMark("Fanel", 10);
         trainer.addFeedbackMark("Vasile", 7);
-      /*  feedbackMarks.put("Ionica", 8);
-        feedbackMarks.put("None", 2);
-        feedbackMarks.put("Fanel", 10);
-        feedbackMarks.put("Vasile", 7);
-       */
         trainer.getFeedbackMarks();
         trainer.printFeedbackMarks();
         trainer.printPersonDetails();
@@ -88,11 +82,6 @@ public class ManagePerson {
         trainer1.addFeedbackMark(3);
         trainer1.addFeedbackMark("Fanel", 3);
         trainer1.addFeedbackMark("Vasile", 3);
-        /*feedbackMarks1.put("Ionica", 3);
-        feedbackMarks1.put("Test",3);
-        feedbackMarks1.put("Fanel", 3);
-        feedbackMarks1.put("Vasile", 3);
-        */
         trainer1.getFeedbackMarks();
         trainer1.printFeedbackMarks();
         trainer1.printPersonDetails();
@@ -109,11 +98,6 @@ public class ManagePerson {
         trainer2.addFeedbackMark(10);
         trainer2.addFeedbackMark("Fanel", 4);
         trainer2.addFeedbackMark("Vasile", 4);
-        /*feedbackMarks2.put("Ionica", 2);
-        feedbackMarks2.put("None", 10);
-        feedbackMarks2.put("Fanel", 4);
-        feedbackMarks2.put("Vasile", 4);
-         */
         trainer2.getFeedbackMarks();
         trainer2.printFeedbackMarks();
         trainer2.printPersonDetails();
