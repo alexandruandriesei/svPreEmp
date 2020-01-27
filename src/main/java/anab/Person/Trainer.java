@@ -16,17 +16,14 @@ public class Trainer extends Person {
         this.feedbackMarks = feedbackMarks;
     }
 
-    // see the specialization of a trainer
     public String getSpecialization() {
         return this.specialization;
     }
 
-    //add specialization of a trainer
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
 
-    //see the years of experience of a trainer
     public int getExperienceYears() {
         return this.experienceYears;
     }
@@ -91,5 +88,5 @@ public class Trainer extends Person {
             sum = sum + (int) entry.getValue();
         }
         return (double) sum / feedbackMarks.size();
-     }
+    }
 }
