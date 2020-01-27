@@ -14,7 +14,6 @@ public class Student extends Person {
 
     public void setGraduated(Boolean newGraduated) {
         graduated = newGraduated;
-
     }
 
     public void setCode(String newCode) {
